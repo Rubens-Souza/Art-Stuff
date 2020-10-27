@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2D02E47A1E0B4A5D006451C7"
-               BuildableName = "artStuff-tvOS.app"
-               BlueprintName = "artStuff-tvOS"
-               ReferencedContainer = "container:artStuff.xcodeproj">
+               BuildableName = "ArtStuff-tvOS.app"
+               BlueprintName = "ArtStuff-tvOS"
+               ReferencedContainer = "container:ArtStuff.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2D02E48F1E0B4A5D006451C7"
-               BuildableName = "artStuff-tvOSTests.xctest"
-               BlueprintName = "artStuff-tvOSTests"
-               ReferencedContainer = "container:artStuff.xcodeproj">
+               BuildableName = "ArtStuff-tvOSTests.xctest"
+               BlueprintName = "ArtStuff-tvOSTests"
+               ReferencedContainer = "container:ArtStuff.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -55,9 +55,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2D02E47A1E0B4A5D006451C7"
-            BuildableName = "artStuff-tvOS.app"
-            BlueprintName = "artStuff-tvOS"
-            ReferencedContainer = "container:artStuff.xcodeproj">
+            BuildableName = "ArtStuff-tvOS.app"
+            BlueprintName = "ArtStuff-tvOS"
+            ReferencedContainer = "container:ArtStuff.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -72,9 +72,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2D02E47A1E0B4A5D006451C7"
-            BuildableName = "artStuff-tvOS.app"
-            BlueprintName = "artStuff-tvOS"
-            ReferencedContainer = "container:artStuff.xcodeproj">
+            BuildableName = "ArtStuff-tvOS.app"
+            BlueprintName = "ArtStuff-tvOS"
+            ReferencedContainer = "container:ArtStuff.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
