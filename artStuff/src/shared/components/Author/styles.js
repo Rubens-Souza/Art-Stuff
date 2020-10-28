@@ -10,7 +10,7 @@ import {
 
 export const StyledAuthorView = styled.View`
     flex-direction: row;
-    align-items: center;
+    align-items: flex-start;
     padding: 3px 9px;
 `;
 
@@ -26,11 +26,12 @@ export const StyledTextView = styled.View`
 `;
 
 export const StyledAuthorName = styled(DefaultStyledText)`
-    font-size: 18px;
+    font-size: 15px;
+    font-weight: bold;
 `;
 
 export const StyledSubText = styled(DefaultStyledText)`
     color: ${Colors.Gray};
-    font-size: 15px;
+    font-size: 13px;
     font-style: italic;
 `;
