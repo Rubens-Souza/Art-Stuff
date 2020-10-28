@@ -8,11 +8,13 @@ import {
 import Author from "../Author/Author";
 
 const Post = ({
-    artImage, userName, email
+    artImage, userName, email, postTitle
 }) => {
     return (
         <StyledPostView>
-            <Author userName={userName} email={email}>Flying</Author>
+            <Author userName={userName} email={email}>
+                {postTitle}
+            </Author>
             <StyledPostImage source={artImage}/>
         </StyledPostView>
     );

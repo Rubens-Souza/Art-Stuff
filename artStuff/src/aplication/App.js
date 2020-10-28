@@ -14,7 +14,7 @@ const App = () => {
     <React.Fragment>
       <StyledSafeAreaView>
         <Header />
-        <Post artImage={Image} userName={"Fake Peson"} email={"fake.person.job@gmail.com"}/>
+        <Post artImage={Image} userName={"Fake Peson"} email={"fake.person.job@gmail.com"} postTitle="Flying"/>
       </StyledSafeAreaView>
     </React.Fragment>
   );
