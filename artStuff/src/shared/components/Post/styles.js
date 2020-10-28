@@ -10,6 +10,7 @@ export const StyledPostView = styled.View`
 
 export const StyledPostImage = styled.Image`
     width: 100%;
-    height: 53%;
+    max-height: 221px;
     resize-mode: contain;
+    margin: 0px 3px;
 `;
