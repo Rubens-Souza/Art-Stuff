@@ -19,5 +19,6 @@ export const DefaultStyledTitle = styled.Text`
 `;
 
 export const DefaultStyledText = styled.Text`
+    font-family: ${Fonts.Main};
     color: ${Colors.Withe};
 `;

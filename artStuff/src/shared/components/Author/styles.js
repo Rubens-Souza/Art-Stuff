@@ -32,4 +32,5 @@ export const StyledAuthorName = styled(DefaultStyledText)`
 export const StyledSubText = styled(DefaultStyledText)`
     color: ${Colors.Gray};
     font-size: 15px;
+    font-style: italic;
 `;
