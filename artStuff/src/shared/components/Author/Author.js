@@ -8,6 +8,8 @@ import {
     StyledTextView, 
 } from "./styles";
 
+import If from "../If/If";
+
 const Author = ({
     userName, email, children
 }) => {
@@ -20,11 +22,15 @@ const Author = ({
     return (
         <StyledAuthorView>
             <StyledAuthorImage options={userGravatarAcessData}/>
+            
             <StyledTextView>
                 <StyledAuthorName>{userName}</StyledAuthorName>
-                <StyledSubText>
-                    {children}
-                </StyledSubText>
+
+                <If isTrue={children}>
+                    <StyledSubText>
+                        {children}
+                    </StyledSubText>
+                </If>
             </StyledTextView>
         </StyledAuthorView>
     );
