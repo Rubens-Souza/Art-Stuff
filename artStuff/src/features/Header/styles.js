@@ -6,7 +6,7 @@ import {
 import Colors from "../../shared/utils/constants/Colors";
 
 export const StyledTitle = styled(DefaultStyledTitle)`
-    font-size: 24px;
+    font-size: 27px;
     margin-left: 6px;
 `;
 
@@ -21,6 +21,6 @@ export const StyledSafeAreaView = styled.SafeAreaView`
 `;
 
 export const StyledIcon = styled.Image`
-    height: 27px;
-    width: 27px;
+    height: 30px;
+    width: 30px;
 `;
