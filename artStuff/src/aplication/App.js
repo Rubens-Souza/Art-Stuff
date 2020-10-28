@@ -9,12 +9,19 @@ import Post from "../shared/components/Post/Post";
 
 import Image from "../../assets/imgs/art-test.jpg";
 
+import UserData from "../shared/dtos/UserData";
+import PostData from "../shared/dtos/PostData";
+
 const App = () => {
+
+  const fakePerson = new UserData("fake.person.job@gmail.com", "Fake Person");
+  const post = new PostData(fakePerson, "Flying", Image, []);
+
   return (
     <React.Fragment>
       <StyledSafeAreaView>
         <Header />
-        <Post artImage={Image} userName={"Fake Peson"} email={"fake.person.job@gmail.com"} postTitle="Flying"/>
+        <Post postData={post}/>
       </StyledSafeAreaView>
     </React.Fragment>
   );

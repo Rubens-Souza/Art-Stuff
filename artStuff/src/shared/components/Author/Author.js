@@ -11,11 +11,11 @@ import {
 import If from "../If/If";
 
 const Author = ({
-    userName, email, children
+    user, children
 }) => {
 
     const userGravatarAcessData = {
-        email: email,
+        email: user.email,
         secure: true,
     };
 
@@ -24,7 +24,7 @@ const Author = ({
             <StyledAuthorImage options={userGravatarAcessData}/>
             
             <StyledTextView>
-                <StyledAuthorName>{userName}</StyledAuthorName>
+                <StyledAuthorName>{user.nickName}</StyledAuthorName>
 
                 <If isTrue={children}>
                     <StyledSubText>

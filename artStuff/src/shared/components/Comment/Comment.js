@@ -9,11 +9,11 @@ import {
 } from "./styles";
 
 const Comment = ({
-    userName, email, children
+    commentData, children
 }) => {
 
     const userGravatarAcessData = {
-        email: email,
+        email: commentData.author.email,
         secure: true,
     };
 
@@ -21,7 +21,7 @@ const Comment = ({
         <StyledCommentView>
             <StyledCommentAuthorImage options={userGravatarAcessData}/>
             <StyledCommentTextView>
-                <StyledCommentAuthorName>{userName}</StyledCommentAuthorName>
+                <StyledCommentAuthorName>{commentData.author.nickName}</StyledCommentAuthorName>
                 <StyledCommentText>{children}</StyledCommentText>
             </StyledCommentTextView>
         </StyledCommentView>
