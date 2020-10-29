@@ -1,5 +1,18 @@
+import ChatOutline from "../../../../assets/imgs/chat.png";
+import ChatOpen from "../../../../assets/imgs/openchat.png";
+import Like from "../../../../assets/imgs/like.png";
+import Liked from "../../../../assets/imgs/liked.png";
+import Share from "../../../../assets/imgs/share.png";
+import FavIcon from "../../../../assets/imgs/favicon.png";
+
 const Icons = {
     DefaultIconSize: 15,
+    ChatOutline: ChatOutline,
+    ChatOpen: ChatOpen,
+    Like: Like,
+    Liked: Liked,
+    Share: Share,
+    FavIcon: FavIcon,
 };
 
 export default Icons;

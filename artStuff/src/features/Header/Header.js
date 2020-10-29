@@ -1,16 +1,16 @@
 import React from "react";
 import  {
     StyledSafeAreaView,
-    StyledIcon,
+    StyledImage,
     StyledTitle
 } from "./styles";
 
-import Icon from "../../../assets/imgs/icon.png";
+import Icons from "../../shared/utils/constants/Icons";
 
 const Header = () => {
     return (
         <StyledSafeAreaView>
-            <StyledIcon source={Icon}/>
+            <StyledImage source={Icons.FavIcon}/>
             <StyledTitle>Art Stuff</StyledTitle>
         </StyledSafeAreaView>
     );

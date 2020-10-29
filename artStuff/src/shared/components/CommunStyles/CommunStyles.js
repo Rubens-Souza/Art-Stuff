@@ -15,10 +15,10 @@ export const getWindowHeight = () => {
 
 export const DefaultStyledTitle = styled.Text`
     font-family: ${Fonts.Logo};
-    color: ${Colors.Withe};
+    color: ${Colors.Black};
 `;
 
 export const DefaultStyledText = styled.Text`
     font-family: ${Fonts.Main};
-    color: ${Colors.Withe};
+    color: ${Colors.Black};
 `;
