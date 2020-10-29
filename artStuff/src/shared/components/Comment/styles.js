@@ -13,14 +13,15 @@ export const StyledCommentView = styled.View`
     width: 90%;
     margin: 6px 4px;
     padding: 3px 6px;
-    border-left-color: ${Colors.LightGray};
-    border-left-width: 1px;
+    border-left-color: ${Colors.LightBlack};
+    border-left-width: 2px;
 `;
 
 export const StyledCommentAuthorImage = styled(Gravatar)`
     height: 33px;
     width: 33px;
     margin-right: 6px;
+    border-radius: 3px;
 `;
 
 export const StyledCommentTextView = styled.View``;

@@ -15,12 +15,12 @@ export const StyledSafeAreaView = styled.SafeAreaView`
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
-    padding: 6px 9px;
-    border-bottom-color: ${Colors.LightGray};
+    padding: 9px 9px;
+    border-bottom-color: ${Colors.Black};
     border-bottom-width: 1px;
 `;
 
-export const StyledIcon = styled.Image`
+export const StyledImage = styled.Image`
     height: 30px;
     width: 30px;
 `;

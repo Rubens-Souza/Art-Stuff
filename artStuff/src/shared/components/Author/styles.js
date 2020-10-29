@@ -11,13 +11,14 @@ import {
 export const StyledAuthorView = styled.View`
     flex-direction: row;
     align-items: flex-start;
-    padding: 3px 9px;
+    margin-left: 6px;
 `;
 
 export const StyledAuthorImage = styled(Gravatar)`
     height: 39px;
     width: 39px;
     margin-right: 9px;
+    border-radius: 3px;
 `;
 
 export const StyledTextView = styled.View`
@@ -31,7 +32,7 @@ export const StyledAuthorName = styled(DefaultStyledText)`
 `;
 
 export const StyledSubText = styled(DefaultStyledText)`
-    color: ${Colors.Gray};
+    color: ${Colors.LightBlack};
     font-size: 13px;
     font-style: italic;
 `;
