@@ -4,6 +4,7 @@ import Like from "../../../../assets/imgs/like.png";
 import Liked from "../../../../assets/imgs/liked.png";
 import Share from "../../../../assets/imgs/share.png";
 import FavIcon from "../../../../assets/imgs/favicon.png";
+import Plus from "../../../../assets/imgs/plus.png";
 
 const Icons = {
     DefaultIconSize: 15,
@@ -13,6 +14,7 @@ const Icons = {
     Liked: Liked,
     Share: Share,
     FavIcon: FavIcon,
+    Plus: Plus,
 };
 
 export default Icons;
