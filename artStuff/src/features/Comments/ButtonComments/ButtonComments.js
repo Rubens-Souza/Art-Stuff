@@ -5,10 +5,10 @@ import {
     StyledButtonText,
 } from "./styles";
 
-import If from "../If/If";
-import ToggleButton from "../ToggleButton/ToggleButton";
+import If from "../../../shared/components/If/If";
+import ToggleButton from "../../../shared/components/ToggleButton/ToggleButton";
 
-import Icons from "../../utils/constants/Icons";
+import Icons from "../../../shared/utils/constants/Icons";
 
 const ButtonComments = ({
     onDisable,

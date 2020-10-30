@@ -2,10 +2,10 @@ import styled from "styled-components/native";
 
 import { 
     DefaultStyledText 
-} from "../CommunStyles/CommunStyles";
+} from "../../../shared/components/CommunStyles/CommunStyles";
 
-import Colors from "../../utils/constants/Colors";
-import Fonts from "../../utils/constants/Fonts";
+import Colors from "../../../shared/utils/constants/Colors";
+import Fonts from "../../../shared/utils/constants/Fonts";
 
 export const StyledButtonText = styled(DefaultStyledText)`
     margin-left: 9px;
