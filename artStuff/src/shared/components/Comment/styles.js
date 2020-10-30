@@ -16,6 +16,7 @@ export const StyledCommentView = styled.View`
     border-left-color: ${Colors.LightBlack};
     border-left-width: 2px;
 `;
+
 export const StyledCommentAuthorImage = styled(Gravatar)`
     height: 33px;
     width: 33px;
@@ -23,7 +24,8 @@ export const StyledCommentAuthorImage = styled(Gravatar)`
     border-radius: 3px;
 `;
 
-export const StyledCommentTextView = styled.View``;
+export const StyledCommentTextView = styled.View`
+`;
 
 export const StyledCommentAuthorName = styled(DefaultStyledText)`
     font-size: 14px;

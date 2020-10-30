@@ -11,7 +11,6 @@ import {
 export const StyledAuthorView = styled.View`
     flex-direction: row;
     align-items: flex-start;
-    margin-left: 6px;
 `;
 
 export const StyledAuthorImage = styled(Gravatar)`

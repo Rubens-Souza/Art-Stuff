@@ -30,15 +30,15 @@ export const StyledHorizontalLine = styled.View`
 export const StyledFeedbackView = styled.View`
     flex-direction: row;
     justify-content: space-between;
+    padding: 0px 9px;
 `;
 
 export const StyledLikeShareView = styled.View`
     flex-direction: row;
-    margin-right: 9px;
 `;
 
 export const StyledShareButton = styled.TouchableOpacity`
-    margin-left: 12px;
+    margin-left: 15px;
 `;
 
 export const StyledShareButtonIcon = styled.Image`
