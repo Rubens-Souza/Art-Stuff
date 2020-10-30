@@ -16,6 +16,7 @@ export const StyledSafeAreaView = styled.SafeAreaView`
     justify-content: flex-start;
     align-items: center;
     padding: 9px 9px;
+    background-color: ${Colors.White};
     border-bottom-color: ${Colors.LightGray};
     border-bottom-width: 1px;
 `;

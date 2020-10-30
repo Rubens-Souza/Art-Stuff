@@ -6,6 +6,8 @@ import {
 
 import Post from "../../features/Post/Post";
 
+import Icons from "../../shared/utils/constants/Icons";
+
 import KateFoxPostImage from "../../../assets/imgs/art-test.jpg";
 import YuumeiPostImage from "../../../assets/imgs/art-test4.jpg";
 import YuumeiPostImage2 from "../../../assets/imgs/art-test5.jpg";
@@ -13,6 +15,7 @@ import YuumeiPostImage2 from "../../../assets/imgs/art-test5.jpg";
 import UserData from "../../shared/dtos/UserData";
 import PostData from "../../shared/dtos/PostData";
 import CommentData from "../../shared/dtos/CommentData";
+import ScreenData from "../../shared/dtos/ScreenData";
 
 const Feed = () => {
 
@@ -43,4 +46,5 @@ const Feed = () => {
     );
 };
 
+export const FeedScreenData = new ScreenData(Feed.name, Icons.FeedEnable, Icons.FeedDisable);
 export default Feed;
