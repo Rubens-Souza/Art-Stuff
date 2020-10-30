@@ -10,8 +10,6 @@ import Colors from "../../utils/constants/Colors";
 
 export const StyledCommentView = styled.View`
     flex-direction: row;
-    width: 90%;
-    margin: 6px 4px;
     padding: 3px 6px;
     border-left-color: ${Colors.LightBlack};
     border-left-width: 2px;
