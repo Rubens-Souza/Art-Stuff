@@ -5,7 +5,7 @@ import {
 }from "./styles";
 
 import Header from "../features/Header/Header";
-import Feed from "../features/Feed/Feed";
+import Navigator from "../features/Navigator/Navigator";
 
 const App = () => {
 
@@ -13,7 +13,7 @@ const App = () => {
     <React.Fragment>
       <StyledSafeAreaView>
           <Header />
-          <Feed />
+          <Navigator />
       </StyledSafeAreaView>
     </React.Fragment>
   );
