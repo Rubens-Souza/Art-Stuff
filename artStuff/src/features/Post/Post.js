@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 
+import Collapsible from "react-native-collapsible";
+
 import {
     StyledPostView,
     StyledHorizontalLineView,
@@ -21,6 +23,10 @@ import UserData from "../../shared/dtos/UserData";
 
 import Icons from "../../shared/utils/constants/Icons";
 
+const Initial_State = {
+    areCommentsOpen: true,
+}
+
 const Post = ({
     postData
 }) => {
@@ -31,6 +37,15 @@ const Post = ({
     let x = [comment];
 
     const [comments, setComments] = useState(x);
+    const [areCommentsOpen, setAreCommentsOpen] = useState(Initial_State.areCommentsOpen);
+
+    const handleOpenComments = () => {
+        setAreCommentsOpen(true);
+    };
+
+    const handleCloseComments = () => {
+        setAreCommentsOpen(false);
+    };
 
     return (
         <StyledPostView>
@@ -41,7 +56,11 @@ const Post = ({
             <StyledPostImage source={postData.image}/>
 
             <StyledFeedbackView>
-                <ButtonComments numberComments={comments.length}/>
+                <ButtonComments 
+                    onEnable={handleOpenComments}
+                    onDisable={handleCloseComments}
+                    numberComments={comments.length}/>
+                
                 <StyledLikeShareView>
                     <ToggleButtons enableIcon={Icons.Liked} disableIcon={Icons.Like}/>
                     <StyledShareButton>
@@ -49,7 +68,10 @@ const Post = ({
                     </StyledShareButton>
                 </StyledLikeShareView>
             </StyledFeedbackView>
-            <Comments commentsData={comments}/>
+
+            <Collapsible collapsed={areCommentsOpen}>
+                <Comments commentsData={comments}/>
+            </Collapsible>
 
             <StyledHorizontalLineView>
                 <StyledHorizontalLine/>
