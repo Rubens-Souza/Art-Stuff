@@ -1,25 +1,59 @@
 import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
-import { createStackNavigator } from "@react-navigation/stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
-import Feed from "../Feed/Feed";
+import {
+    StyledTabIcon
+} from "./styles";
 
-import AppScreens from "../../shared/utils/constants/AppScreens";
+import Feed, { FeedScreenData } from "../Feed/Feed";
+import Profile, { ProfileScreenData } from "../Profile/Profile";
+
+import Colors from "../../shared/utils/constants/Colors";
 
 const Tab = createBottomTabNavigator();
-const Stack = createStackNavigator();
+
+const Screens = [
+    FeedScreenData,
+    ProfileScreenData,
+];
 
 const Navigator = () => {
 
-    const ScreenCommunOptions = {
-        headerShown: false,
+    const getScreenOptions = ({ route }) => {
+        const options = {
+            tabBarIcon: ({ focused }) => {
+                return getScreenIcon(focused, route.name);
+            },
+        };
+
+        return options;
+    };
+
+    const getScreenIcon = (isActive, name) => {
+        const screenData = Screens.find(screen => screen.name === name);
+        let screenIcon = isActive && screenData ? screenData.enableIcon : screenData.disableIcon;
+
+        return (<StyledTabIcon source={screenIcon} />);
+    };
+
+    const tabBarOptions = {
+        keyboardHidesTabBar: true,
+        showLabel: false,
+        style: {
+          backgroundColor: Colors.White,
+        },
     };
 
     return (
         <NavigationContainer>
-            <Tab.Navigator initialRouteName={AppScreens.Feed}>
-                <Tab.Screen name={AppScreens.Feed} component={Feed} options={ScreenCommunOptions} />
+            <Tab.Navigator 
+                screenOptions={getScreenOptions}
+                tabBarOptions={tabBarOptions}
+                initialRouteName={FeedScreenData.name}>
+                
+                <Tab.Screen name={FeedScreenData.name} component={Feed} />
+                <Tab.Screen name={ProfileScreenData.name} component={Profile} />
             </Tab.Navigator>
         </NavigationContainer>
     );
