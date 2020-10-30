@@ -26,3 +26,22 @@ export const StyledHorizontalLine = styled.View`
     border-bottom-width: 3px;
     border-bottom-color: ${Colors.Black};
 `;
+
+export const StyledFeedbackView = styled.View`
+    flex-direction: row;
+    justify-content: space-between;
+`;
+
+export const StyledLikeShareView = styled.View`
+    flex-direction: row;
+    margin-right: 9px;
+`;
+
+export const StyledShareButton = styled.TouchableOpacity`
+    margin-left: 12px;
+`;
+
+export const StyledShareButtonIcon = styled.Image`
+    height: 24px;
+    width: 24px;
+`;

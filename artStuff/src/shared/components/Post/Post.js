@@ -4,15 +4,22 @@ import {
     StyledPostView,
     StyledHorizontalLineView,
     StyledHorizontalLine,
-    StyledPostImage
+    StyledPostImage,
+    StyledFeedbackView,
+    StyledLikeShareView,
+    StyledShareButton,
+    StyledShareButtonIcon
 } from "./styles";
 
 import Author from "../Author/Author";
 import Comment from "../Comment/Comment";
 import Comments from "../../../features/Comments/Comments";
+import ToggleButtons from "../ToggleButton/ToggleButton";
 
 import CommentData from "../../dtos/CommentData";
 import UserData from "../../dtos/UserData";
+
+import Icons from "../../utils/constants/Icons";
 
 const Post = ({
     postData
@@ -29,7 +36,15 @@ const Post = ({
 
             <StyledPostImage source={postData.image}/>
 
-            <Comments/>
+            <StyledFeedbackView>
+                <Comments/>
+                <StyledLikeShareView>
+                    <ToggleButtons enableIcon={Icons.Liked} disableIcon={Icons.Like}/>
+                    <StyledShareButton>
+                        <StyledShareButtonIcon source={Icons.Share}/>
+                    </StyledShareButton>
+                </StyledLikeShareView>
+            </StyledFeedbackView>
 
             <StyledHorizontalLineView>
                 <StyledHorizontalLine/>
