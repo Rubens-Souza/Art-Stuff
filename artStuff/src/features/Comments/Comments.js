@@ -2,23 +2,15 @@ import React from "react";
 
 import {
     StyledCommentsView,
-    StyledCommentsText,
-    StyledCommentsList,
-    StyledIcon,
-    StyledToggleComments
+    StyledCommentsList
 } from "./styles";
 
-import Icons from "../../shared/utils/constants/Icons";
+import ButtonComments from "../../shared/components/ButtonComments/ButtonComments";
 
 const Comments = () => {
     return (
         <StyledCommentsView>
-            <StyledToggleComments>
-                <StyledIcon source={Icons.ChatOutline} />
-                <StyledCommentsText>
-                    {2} Comments
-                </StyledCommentsText>
-            </StyledToggleComments>
+            <ButtonComments numberComments={7}/>
 
             <StyledCommentsList />
         </StyledCommentsView>
