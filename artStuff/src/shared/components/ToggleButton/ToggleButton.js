@@ -32,9 +32,7 @@ const ToggleButton = ({
     const getIcon = () => {
         return isActive ? enableIcon : disableIcon;
     };
-
-    console.log(children);
-
+    
     return (
         <StyledToggleButton onPress={handleButtonPress}>
             <StyledIcon source={getIcon()} />
