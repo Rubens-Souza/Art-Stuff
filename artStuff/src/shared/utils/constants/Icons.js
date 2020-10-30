@@ -5,6 +5,8 @@ import Liked from "../../../../assets/imgs/liked.png";
 import Share from "../../../../assets/imgs/share.png";
 import FavIcon from "../../../../assets/imgs/favicon.png";
 import Plus from "../../../../assets/imgs/plus.png";
+import Home from "../../../../assets/imgs/home.png";
+import HomeFill from "../../../../assets/imgs/homeFull.png";
 
 const Icons = {
     DefaultIconSize: 15,
@@ -15,6 +17,8 @@ const Icons = {
     Share: Share,
     FavIcon: FavIcon,
     Plus: Plus,
+    FeedDisable: Home,
+    FeedEnable: HomeFill,
 };
 
 export default Icons;
