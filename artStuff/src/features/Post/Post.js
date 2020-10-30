@@ -11,15 +11,14 @@ import {
     StyledShareButtonIcon
 } from "./styles";
 
-import Author from "../Author/Author";
-import Comment from "../Comment/Comment";
-import Comments from "../../../features/Comments/Comments";
-import ToggleButtons from "../ToggleButton/ToggleButton";
+import Author from "../../shared/components/Author/Author";
+import Comments from "../Comments/Comments";
+import ToggleButtons from "../../shared/components/ToggleButton/ToggleButton";
 
-import CommentData from "../../dtos/CommentData";
-import UserData from "../../dtos/UserData";
+import CommentData from "../../shared/dtos/CommentData";
+import UserData from "../../shared/dtos/UserData";
 
-import Icons from "../../utils/constants/Icons";
+import Icons from "../../shared/utils/constants/Icons";
 
 const Post = ({
     postData

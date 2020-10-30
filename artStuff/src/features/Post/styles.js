@@ -1,5 +1,5 @@
 import styled from "styled-components/native";
-import Colors from "../../utils/constants/Colors";
+import Colors from "../../shared/utils/constants/Colors";
 
 export const StyledPostView = styled.View`
     padding: 6px 0 9px 0;
