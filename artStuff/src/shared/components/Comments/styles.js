@@ -21,14 +21,14 @@ export const StyledAddCommentButton = styled.TouchableOpacity`
 `;
 
 export const StyledAddCommentButtonIcon = styled.Image`
-    height: 24px;
-    width: 24px;
+    height: 21px;
+    width: 21px;
 `;
 
 export const StyledCommentInput = styled.TextInput`
     width: 85%;
     padding: 3px;
-    font-size: 15px;
+    font-size: 14px;
     border-bottom-color: ${Colors.Black};
     border-bottom-width: 1px;
 `;
