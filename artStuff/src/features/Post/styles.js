@@ -1,4 +1,5 @@
 import styled from "styled-components/native";
+
 import Colors from "../../shared/utils/constants/Colors";
 
 export const StyledPostView = styled.View`

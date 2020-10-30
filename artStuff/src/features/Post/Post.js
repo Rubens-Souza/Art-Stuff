@@ -14,9 +14,9 @@ import {
 } from "./styles";
 
 import Author from "../../shared/components/Author/Author";
-import Comments from "../Comments/Comments";
+import Comments from "../../shared/components/Comments/Comments";
 import ToggleButtons from "../../shared/components/ToggleButton/ToggleButton";
-import ButtonComments from "../../features/Comments/ButtonComments/ButtonComments";
+import ButtonComments from "../../shared/components/ButtonComments/ButtonComments";
 
 import CommentData from "../../shared/dtos/CommentData";
 import UserData from "../../shared/dtos/UserData";
