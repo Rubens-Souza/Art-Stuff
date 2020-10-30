@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 import {
     StyledAuthorView, 
@@ -10,8 +11,11 @@ import {
 
 import If from "../If/If";
 
+import UserData from "../../dtos/UserData";
+
 const Author = ({
-    user, children
+    user, 
+    children
 }) => {
 
     const userGravatarAcessData = {
@@ -34,6 +38,14 @@ const Author = ({
             </StyledTextView>
         </StyledAuthorView>
     );
+};
+
+Author.propTypes = {
+    user: PropTypes.object.isRequired,
+};
+
+Author.defaultProps = {
+    user: UserData.EmptyUser,
 };
 
 export default Author;

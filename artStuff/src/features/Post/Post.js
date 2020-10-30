@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import PropTypes from "prop-types";
 
 import Collapsible from "react-native-collapsible";
 
@@ -18,10 +19,9 @@ import Comments from "../../shared/components/Comments/Comments";
 import ToggleButtons from "../../shared/components/ToggleButton/ToggleButton";
 import ButtonComments from "../../shared/components/ButtonComments/ButtonComments";
 
-import CommentData from "../../shared/dtos/CommentData";
-import UserData from "../../shared/dtos/UserData";
-
 import Icons from "../../shared/utils/constants/Icons";
+
+import PostData from "../../shared/dtos/PostData";
 
 const Initial_State = {
     areCommentsOpen: true,
@@ -31,13 +31,8 @@ const Post = ({
     postData
 }) => {
 
-    const user = new UserData("gamer@gmail.com", "Pro-Player");
-
-    const comment = new CommentData(user, "I don't understand, you're saying this is digital??? If so, I'm impressed. Although I don't think I'll ever try it. I do digital work, and like how that comes out. But I also do traditional art, and don't want to mix the two.");
-    let x = [comment];
-
-    const [comments, setComments] = useState(x);
     const [areCommentsOpen, setAreCommentsOpen] = useState(Initial_State.areCommentsOpen);
+    const [comments, setComments] = useState(postData.comments);
 
     const handleOpenComments = () => {
         setAreCommentsOpen(true);
@@ -78,6 +73,14 @@ const Post = ({
             </StyledHorizontalLineView>
         </StyledPostView>
     );
+};
+
+Post.propTypes = {
+    postData: PropTypes.object.isRequired,
+};
+
+Post.defaultProps = {
+    postData: PostData.EmptyPost,
 };
 
 export default Post;

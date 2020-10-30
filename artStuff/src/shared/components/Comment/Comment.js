@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 import {
     StyledCommentView,
@@ -8,8 +9,11 @@ import {
     StyledCommentText
 } from "./styles";
 
+import CommentData from "../../dtos/CommentData";
+
 const Comment = ({
-    commentData, children
+    commentData, 
+    children
 }) => {
 
     const userGravatarAcessData = {
@@ -26,6 +30,14 @@ const Comment = ({
             </StyledCommentTextView>
         </StyledCommentView>
     );
+};
+
+Comment.propTypes = {
+    commentData: PropTypes.object.isRequired,
+};
+
+Comment.defaultProps = {
+    commentData: CommentData.EmptyComment,
 };
 
 export default Comment;
