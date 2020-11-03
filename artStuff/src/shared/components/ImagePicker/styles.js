@@ -7,7 +7,6 @@ import Colors from "../../utils/constants/Colors";
 export const StyledImagePickerView = styled.View`
     justify-content: space-evenly;
     align-items: center;
-    background-color: red;
 `;
 
 export const StyledSelectedImage = styled.Image`
@@ -17,8 +16,6 @@ export const StyledSelectedImage = styled.Image`
 `;
 
 export const StyledButton = styled(Button)`
-    margin-top: 5px;
-    background-color: red;
 `;
 
 export const StyledSelectedImageView = styled.View`

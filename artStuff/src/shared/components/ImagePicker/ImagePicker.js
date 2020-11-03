@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
+import { StyleSheet } from "react-native";
 import { default as NativeImagePicker } from "react-native-image-picker";
 
 import {
@@ -11,7 +12,6 @@ import {
 } from "./styles";
 
 import If from "../If/If";
-import Button from "../Button/Button";
 
 import Icons from "../../utils/constants/Icons";
 
@@ -88,6 +88,7 @@ const ImagePicker = ({
     };
 
     const handleImageSelection = (response) => {
+        setHasSelectedAnImage(true);
         const SelectedImage = getImageData(response);
 
         if (hasSetFunctionProperty(onImageSelection)) {
@@ -117,7 +118,7 @@ const ImagePicker = ({
                         <StyledSelectedImage />
                     </If>
                     <If isTrue={!hasSelectedAnImage}>
-                            <StyledImageNotSelectedPalceholder source={Icons.Artist} />
+                        <StyledImageNotSelectedPalceholder source={Icons.Artist} />
                     </If>
                 </StyledSelectedImageView>
             </If>
