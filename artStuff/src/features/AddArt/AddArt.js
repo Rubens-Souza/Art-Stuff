@@ -26,6 +26,11 @@ const AddArt = () => {
         setArtTitle(text);
     };
 
+    const saveSelectedImage = (imageData) => {
+        // TODO: Save image data in firebase
+        console.log(imageData);
+    };
+
     return (
         <StyledAddArtView>
             <StyledPostView>
@@ -42,7 +47,7 @@ const AddArt = () => {
                 />
             </StyledPostView>
             
-            <ImagePicker />
+            <ImagePicker onImageSelection={saveSelectedImage} />
         </StyledAddArtView>
     );
 };
