@@ -4,6 +4,7 @@ const Colors = {
     SnowWhite: "#fafafa",
     White: "#fefefe",
     LightGray: "#cdcdcd",
+    GrayWhite: "#efeded",
 };
 
 export default Colors;
