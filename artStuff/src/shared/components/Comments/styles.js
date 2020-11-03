@@ -1,5 +1,9 @@
 import styled from "styled-components/native";
 
+import {
+    DefaultStyledTextInput
+} from "../CommunStyles/CommunStyles";
+
 import Colors from "../../utils/constants/Colors";
 
 export const StyledCommentsView = styled.View`
@@ -25,10 +29,6 @@ export const StyledAddCommentButtonIcon = styled.Image`
     width: 21px;
 `;
 
-export const StyledCommentInput = styled.TextInput`
+export const StyledCommentInput = styled(DefaultStyledTextInput)`
     width: 85%;
-    padding: 3px;
-    font-size: 14px;
-    border-bottom-color: ${Colors.Black};
-    border-bottom-width: 1px;
 `;

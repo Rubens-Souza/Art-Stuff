@@ -3,11 +3,15 @@ import PropTypes from "prop-types";
 import { default as NativeImagePicker } from "react-native-image-picker";
 
 import {
+    DefaultBlackButton,
+    DefaultBlackButtonText
+} from "../CommunStyles/CommunStyles";
+
+import {
     StyledImagePickerView,
     StyledSelectedImage,
     StyledImageNotSelectedPalceholder,
-    StyledSelectedImageView,
-    StyledButton
+    StyledSelectedImageView
 } from "./styles";
 
 import If from "../If/If";
@@ -122,9 +126,11 @@ const ImagePicker = ({
                 </StyledSelectedImageView>
             </If>
 
-            <StyledButton onPress={SelectImage}>
-                {displayText}
-            </StyledButton>
+            <DefaultBlackButton onPress={SelectImage}>
+                <DefaultBlackButtonText>
+                    {displayText}
+                </DefaultBlackButtonText>
+            </DefaultBlackButton>
         </StyledImagePickerView>
     );
 };

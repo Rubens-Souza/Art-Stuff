@@ -1,7 +1,4 @@
 import styled from "styled-components/native";
-
-import Button from "../Button/Button";
-
 import Colors from "../../utils/constants/Colors";
 
 export const StyledImagePickerView = styled.View`
@@ -13,9 +10,6 @@ export const StyledSelectedImage = styled.Image`
     width: ${(props) => props.width ? props.width : "auto"};
     height: ${(props) => props.height ? props.height : "auto"};
     resize-mode: contain;
-`;
-
-export const StyledButton = styled(Button)`
 `;
 
 export const StyledSelectedImageView = styled.View`
