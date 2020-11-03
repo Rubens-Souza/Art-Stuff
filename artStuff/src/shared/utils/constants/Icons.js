@@ -9,6 +9,8 @@ import Home from "../../../../assets/imgs/home.png";
 import HomeFill from "../../../../assets/imgs/homeFull.png";
 import Profile from "../../../../assets/imgs/profile.png";
 import ProfileFill from "../../../../assets/imgs/profileFull.png";
+import AddArt from "../../../../assets/imgs/addArt.png";
+import AddArtFill from "../../../../assets/imgs/addArtFull.png";
 
 const Icons = {
     DefaultIconSize: 15,
@@ -23,6 +25,8 @@ const Icons = {
     FeedEnable: HomeFill,
     Profile: Profile,
     ProfileFill: ProfileFill,
+    AddArt: AddArt,
+    AddArtFill: AddArtFill,
 };
 
 export default Icons;
