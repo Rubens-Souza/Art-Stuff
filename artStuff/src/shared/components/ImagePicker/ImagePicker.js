@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
-import { StyleSheet } from "react-native";
 import { default as NativeImagePicker } from "react-native-image-picker";
 
 import {
