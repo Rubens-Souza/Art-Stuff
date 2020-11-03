@@ -1,8 +1,8 @@
 class ImageData {
 
-    constructor(uri, content, height, width, formatType) {
+    constructor(uri, base64, height, width, formatType) {
         this.uri = uri;
-        this.content = content;
+        this.base64 = base64;
         this.height = height;
         this.width = width;
         this.formatType = formatType;

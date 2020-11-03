@@ -19,7 +19,7 @@ import If from "../If/If";
 import Icons from "../../utils/constants/Icons";
 
 import { hasSetFunctionProperty } from "../../utils/functions/ComponentsUtils";
-import { isStringBlank } from "../../utils/functions/StringUtils";
+import { EmptyString, isStringBlank } from "../../utils/functions/StringUtils";
 
 import ImageData from "../../dtos/ImageData";
 
@@ -43,6 +43,7 @@ const ImagePicker = ({
     displayText,
 }) => {
 
+    const [imagePreview, setImagePreview] = useState(EmptyString);
     const [hasSelectedAnImage, setHasSelectedAnImage] = useState(false);
 
     const options = {
@@ -94,6 +95,8 @@ const ImagePicker = ({
         setHasSelectedAnImage(true);
         const SelectedImage = getImageData(response);
 
+        setImagePreview(SelectedImage);
+
         if (hasSetFunctionProperty(onImageSelection)) {
             onImageSelection(SelectedImage);
         }
@@ -118,7 +121,7 @@ const ImagePicker = ({
             <If isTrue={showSelectedImage}>
                 <StyledSelectedImageView>
                     <If isTrue={hasSelectedAnImage}>
-                        <StyledSelectedImage />
+                        <StyledSelectedImage source={imagePreview} />
                     </If>
                     <If isTrue={!hasSelectedAnImage}>
                         <StyledImageNotSelectedPalceholder source={Icons.Artist} />
@@ -150,7 +153,7 @@ ImagePicker.defaultProps = {
     onSelectionError: null,
     onImageSelection: null,
     showSelectedImage: true,
-    displayText: "Choose an image!"
+    displayText: "Choose an image!",
 };
 
 export default ImagePicker;
