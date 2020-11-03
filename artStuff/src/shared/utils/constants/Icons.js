@@ -11,6 +11,7 @@ import Profile from "../../../../assets/imgs/profile.png";
 import ProfileFill from "../../../../assets/imgs/profileFull.png";
 import AddArt from "../../../../assets/imgs/addArt.png";
 import AddArtFill from "../../../../assets/imgs/addArtFull.png";
+import DinoArtist from "../../../../assets/imgs/dinoArtist.png";
 
 const Icons = {
     DefaultIconSize: 15,
@@ -27,6 +28,7 @@ const Icons = {
     ProfileFill: ProfileFill,
     AddArt: AddArt,
     AddArtFill: AddArtFill,
+    Artist: DinoArtist,
 };
 
 export default Icons;
