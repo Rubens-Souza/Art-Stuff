@@ -8,5 +8,5 @@ const Profile = () => {
     return null;
 };
 
-export const ProfileScreenData = new ScreenData(Profile.name, Icons.Liked, Icons.Like);
+export const ProfileScreenData = new ScreenData(Profile.name, Icons.ProfileFill, Icons.Profile);
 export default Profile;

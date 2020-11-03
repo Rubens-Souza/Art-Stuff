@@ -7,6 +7,8 @@ import FavIcon from "../../../../assets/imgs/favicon.png";
 import Plus from "../../../../assets/imgs/plus.png";
 import Home from "../../../../assets/imgs/home.png";
 import HomeFill from "../../../../assets/imgs/homeFull.png";
+import Profile from "../../../../assets/imgs/profile.png";
+import ProfileFill from "../../../../assets/imgs/profileFull.png";
 
 const Icons = {
     DefaultIconSize: 15,
@@ -19,6 +21,8 @@ const Icons = {
     Plus: Plus,
     FeedDisable: Home,
     FeedEnable: HomeFill,
+    Profile: Profile,
+    ProfileFill: ProfileFill,
 };
 
 export default Icons;
