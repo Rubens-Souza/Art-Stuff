@@ -8,6 +8,7 @@ import {
 
 import Feed, { FeedScreenData } from "../Feed/Feed";
 import Profile, { ProfileScreenData } from "../Profile/Profile";
+import AddArt, { AddArtScreenData } from "../AddArt/AddArt";
 
 import Colors from "../../shared/utils/constants/Colors";
 
@@ -16,6 +17,7 @@ const Tab = createBottomTabNavigator();
 const Screens = [
     FeedScreenData,
     ProfileScreenData,
+    AddArtScreenData,
 ];
 
 const Navigator = () => {
@@ -53,6 +55,7 @@ const Navigator = () => {
                 initialRouteName={FeedScreenData.name}>
                 
                 <Tab.Screen name={FeedScreenData.name} component={Feed} />
+                <Tab.Screen name={AddArtScreenData.name} component={AddArt} />
                 <Tab.Screen name={ProfileScreenData.name} component={Profile} />
             </Tab.Navigator>
         </NavigationContainer>
