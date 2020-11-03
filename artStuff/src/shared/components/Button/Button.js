@@ -9,10 +9,10 @@ import {
 import ButtonTypes from "../../utils/constants/components_enums/ButtonTypes";
 
 const Button = ({
-    onPress,
-    type,
     children,
-    className 
+    className, 
+    onPress,
+    type 
 }) => {
 
     return (

@@ -14,8 +14,10 @@ export const StyledButton = styled.TouchableOpacity`
     background-color: ${(props) => props.type === ButtonTypes.main ? Colors.Black : "transparent"};
     padding: 6px 9px;
     border-radius: 3px;
+    width: 45%;
 `;
 
 export const StyledText = styled(DefaultStyledText)`
+    text-align: center;
     color: ${(props) => props.type === ButtonTypes.main ? Colors.White : Colors.Black};
 `;
