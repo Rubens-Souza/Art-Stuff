@@ -7,10 +7,7 @@ class UserData {
         this.nickName = nickName;
     }
 
-    static EmptyUser = {
-        email: EmptyString,
-        nickName: EmptyString,
-    };
+    static EmptyUser = new UserData(EmptyString, EmptyString);
 
 }
 

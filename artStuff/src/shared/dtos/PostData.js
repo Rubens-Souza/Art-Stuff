@@ -10,13 +10,7 @@ class PostData {
         this.image = image;
     }
 
-    static EmptyPost = {
-        author: null,
-        title: EmptyString,
-        comments: new Array(0),
-        image: null,
-    };
-
+    static EmptyPost = new PostData(null, EmptyString, new Array(0), null);
 }
 
 export default PostData;

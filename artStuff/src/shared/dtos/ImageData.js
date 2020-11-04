@@ -1,3 +1,5 @@
+import { EmptyString } from "../utils/functions/StringUtils";
+
 class ImageData {
 
     constructor(uri, base64, height, width, formatType) {
@@ -7,6 +9,8 @@ class ImageData {
         this.width = width;
         this.formatType = formatType;
     }
+
+    static EmptyImageData = new ImageData(EmptyString, EmptyString, 0, 0, EmptyString);
 }
 
 export default ImageData;
