@@ -3,7 +3,7 @@ import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
 
 import HomeNavigator, { HomeNavigatorScreenData } from "../HomeNavigator/HomeNavigator";
-import Login, { LoginScreenData } from "../login/login";
+import Login, { LoginScreenData } from "../../Login/Login";
 
 const Stack = createStackNavigator();
 

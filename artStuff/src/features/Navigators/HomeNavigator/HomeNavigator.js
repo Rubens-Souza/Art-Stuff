@@ -5,15 +5,15 @@ import {
     StyledTabIcon
 } from "./styles";
 
-import Header from "../Header/Header";
+import Header from "../../Header/Header";
 
-import Feed, { FeedTabData } from "../Feed/Feed";
-import Profile, { ProfileTabData } from "../Profile/Profile";
-import AddArt, { AddArtTabData } from "../AddArt/AddArt";
+import Feed, { FeedTabData } from "../../Feed/Feed";
+import Profile, { ProfileTabData } from "../../Profile/Profile";
+import AddArt, { AddArtTabData } from "../../AddArt/AddArt";
 
-import Colors from "../../shared/utils/constants/Colors";
+import Colors from "../../../shared/utils/constants/Colors";
 
-import ScreenData from "../../shared/dtos/ScreenData";
+import ScreenData from "../../../shared/dtos/ScreenData";
 
 const Tab = createBottomTabNavigator();
 
