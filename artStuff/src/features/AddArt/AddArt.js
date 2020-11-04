@@ -43,7 +43,7 @@ const AddArt = () => {
                 <StyledTextInput
                     placeholder={"Add a title to your work of art"}
                     value={artTitle}
-                    onChange={handleTextTitleChange}
+                    onChangeText={handleTextTitleChange}
                 />
             </StyledPostView>
             

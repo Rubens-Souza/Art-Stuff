@@ -76,7 +76,7 @@ const CreateAccount = ({
                     <StyledTextInput 
                         placeholder={"Type your user name"}
                         value={userNameInputValue}
-                        onChange={handelUserNameChange}
+                        onChangeText={handelUserNameChange}
                     />
                 </StyledTextInputView>
 
@@ -89,7 +89,7 @@ const CreateAccount = ({
                         keyboardType="email-address"
                         placeholder={"Type your email"}
                         value={emailInputValue}
-                        onChange={handleEmailChange}
+                        onChangeText={handleEmailChange}
                     />
                 </StyledTextInputView>
 
@@ -99,10 +99,11 @@ const CreateAccount = ({
                         Password
                     </StyledTextInputLabel>
                     <StyledTextInput 
+                        secureTextEntry={true}
                         keyboardType="visible-password"
                         placeholder={"Type your password"}
                         value={passwordInputVale}
-                        onChange={handlePasswordChange}
+                        onChangeText={handlePasswordChange}
                     />
                 </StyledTextInputView>
 

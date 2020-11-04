@@ -73,7 +73,7 @@ const Login = ({
                         keyboardType="email-address"
                         placeholder={"Type your email"}
                         value={emailInputValue}
-                        onChange={handleEmailChange}
+                        onChangeText={handleEmailChange}
                     />
                 </StyledTextInputView>
 
@@ -82,10 +82,11 @@ const Login = ({
                         Password
                     </StyledTextInputLabel>
                     <StyledTextInput
+                        secureTextEntry={true}
                         keyboardType="visible-password"
                         placeholder={"Type your password"}
                         value={passwordInputValue}
-                        onChange={handlePasswordChange}
+                        onChangeText={handlePasswordChange}
                     />
                 </StyledTextInputView>
 

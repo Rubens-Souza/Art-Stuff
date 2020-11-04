@@ -62,7 +62,7 @@ const Comments = ({
                 <StyledCommentInput 
                     placeholder={"Add a nice comment!"}
                     value={newComment}
-                    onChange={handleNewCommentChange}
+                    onChangeText={handleNewCommentChange}
                 />
             </StyledAddCommentView>
         </StyledCommentsView>
