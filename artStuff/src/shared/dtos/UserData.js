@@ -8,7 +8,6 @@ class UserData {
     }
 
     static EmptyUser = new UserData(EmptyString, EmptyString);
-
 }
 
 export default UserData;

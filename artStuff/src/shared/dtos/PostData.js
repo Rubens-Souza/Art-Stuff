@@ -1,3 +1,4 @@
+import UserData from "./UserData";
 import { EmptyString } from "../utils/functions/StringUtils";
 
 class PostData {
@@ -10,7 +11,7 @@ class PostData {
         this.image = image;
     }
 
-    static EmptyPost = new PostData(null, EmptyString, new Array(0), null);
+    static EmptyPost = new PostData(UserData.EmptyUser, EmptyString, new Array(0), null);
 }
 
 export default PostData;

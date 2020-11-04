@@ -1,3 +1,5 @@
+import UserData from "./UserData";
+
 class CommentData {
 
     constructor(author, comment) {
@@ -6,11 +8,7 @@ class CommentData {
         this.comment = comment;
     }
 
-    static EmptyComment = {
-        author: null,
-        comment: new Array(0),
-    };
-
+    static EmptyCommentData = new CommentData(UserData.EmptyUser, new Array(0));
 }
 
 export default CommentData;
