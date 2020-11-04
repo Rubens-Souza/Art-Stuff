@@ -5,7 +5,7 @@ import UserData from "../../shared/dtos/UserData";
 
 const InitialState = UserData.EmptyUser;
 
-const UserReducer = (action, state = InitialState) => {
+const UserReducer = (state = InitialState, action) => {
     switch (action.type) {
 
         case (UserActions.user_logged_in):
