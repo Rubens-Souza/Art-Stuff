@@ -64,3 +64,7 @@ export const DefaultBlackButtonText = styled(DefaultButtonText)`
 export const DefaultWhiteButtonText = styled(DefaultButtonText)`
     color: ${Colors.Black};
 `;
+
+export const DefaultGhostButtonText = styled(DefaultButtonText)`
+    color: ${Colors.Black};
+`;
