@@ -52,5 +52,5 @@ const AddArt = () => {
     );
 };
 
-export const AddArtTabData = new TabData("AddArt", Icons.AddArtFill, Icons.AddArt);;
+export const AddArtTabData = new TabData(AddArt.name, Icons.AddArtFill, Icons.AddArt);;
 export default AddArt;

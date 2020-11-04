@@ -4,7 +4,7 @@ import {
   StyledSafeAreaView
 }from "./styles";
 
-import RootNavigator from "../features/RootNavigator/RootNavigator";
+import RootNavigator from "../features/Navigators/RootNavigator/RootNavigator";
 
 const App = () => {
 

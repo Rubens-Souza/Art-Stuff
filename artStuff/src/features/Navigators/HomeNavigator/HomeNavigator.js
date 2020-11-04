@@ -66,5 +66,5 @@ const HomeNavigator = () => {
     );
 };
 
-export const HomeNavigatorScreenData = new ScreenData("Home");
+export const HomeNavigatorScreenData = new ScreenData(HomeNavigator.name);
 export default HomeNavigator;
