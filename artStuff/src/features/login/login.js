@@ -16,9 +16,11 @@ import {
     StyledTitleView
 } from "./styles";
 
-import { HomeNavigatorScreenData } from "../HomeNavigator/HomeNavigator";
+import { HomeNavigatorScreenData } from "../Navigators/HomeNavigator/HomeNavigator";
+import { CreateAccoutScreenData } from "../CreateAccount/CreateAccount";
 
 import Icons from "../../shared/utils/constants/Icons";
+import { EmptyString } from "../../shared/utils/functions/StringUtils";
 import ScreenData from "../../shared/dtos/ScreenData";
 
 import CoverPathLessTraveled from "../../../assets/imgs/Author-Yuumei-Path-Less-Traveled.jpg";
@@ -31,8 +33,8 @@ const Login = ({
     navigation
 }) => {
 
-    const [emailInputValue, setEmailInputValue] = useState();
-    const [passwordInputValue, setPasswordInputValue] = useState();
+    const [emailInputValue, setEmailInputValue] = useState(EmptyString);
+    const [passwordInputValue, setPasswordInputValue] = useState(EmptyString);
 
 
     const handleEmailChange = (text) => {
@@ -48,7 +50,7 @@ const Login = ({
     };
 
     const handleCreateAccount = () => {
-
+        navigation.navigate(CreateAccoutScreenData.name);
     };
 
     return (
@@ -106,5 +108,5 @@ const Login = ({
     );
 };
 
-export const LoginScreenData = new ScreenData("Login");
+export const LoginScreenData = new ScreenData(Login.name);
 export default Login;

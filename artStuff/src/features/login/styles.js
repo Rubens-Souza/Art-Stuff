@@ -22,7 +22,6 @@ export const StyledAppLogo = styled.Image`
     height: 72px;
     width: 72px;
     margin-right: 12px;
-    resize-mode: cover;
 `;
 
 export const StyledAppTitle = styled(DefaultStyledTitle)`
@@ -32,6 +31,7 @@ export const StyledAppTitle = styled(DefaultStyledTitle)`
 export const StyledBackgroundImage = styled.ImageBackground`
     height: 100%;
     width: 100%;
+    resize-mode: cover;
 `;
 
 export const StyledLoginSafeAreaView = styled.SafeAreaView`
@@ -46,7 +46,6 @@ export const StyledTextInputView = styled.View`
 `;
 
 export const StyledTextInput = styled(DefaultStyledTextInput)`
-
 `;
 
 export const StyledTextInputLabel = styled(DefaultStyledText)`
