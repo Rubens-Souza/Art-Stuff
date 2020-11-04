@@ -38,7 +38,7 @@ export const StyledLoginSafeAreaView = styled.SafeAreaView`
     height: 100%;
     justify-content: space-evenly;
     align-items: center;
-    background-color: ${Colors.SnowWhite + "ac"};
+    background-color: ${Colors.SnowWhite + "af"};
 `;
 
 export const StyledTextInputView = styled.View`

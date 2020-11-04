@@ -8,7 +8,8 @@ import {
     StyledAddArtView,
     StyledTextInput,
     StyledWhiteButton,
-    StyledPostView
+    StyledPostView,
+    StyledAddArtSafeAreaView
 } from "./styles";
 
 import ImagePicker from "../../shared/components/ImagePicker/ImagePicker";
@@ -32,23 +33,25 @@ const AddArt = () => {
     };
 
     return (
-        <StyledAddArtView>
-            <StyledPostView>
-                <StyledWhiteButton>
-                    <DefaultWhiteButtonText>
-                        Send
-                    </DefaultWhiteButtonText>
-                </StyledWhiteButton>
+        <StyledAddArtSafeAreaView>
+            <StyledAddArtView nestedScrollEnabled={true}>
+                <StyledPostView>
+                    <StyledWhiteButton>
+                        <DefaultWhiteButtonText>
+                            Send
+                        </DefaultWhiteButtonText>
+                    </StyledWhiteButton>
 
-                <StyledTextInput
-                    placeholder={"Add a title to your work of art"}
-                    value={artTitle}
-                    onChangeText={handleTextTitleChange}
-                />
-            </StyledPostView>
-            
-            <ImagePicker onImageSelection={saveSelectedImage} />
-        </StyledAddArtView>
+                    <StyledTextInput
+                        placeholder={"Add a title to your work of art"}
+                        value={artTitle}
+                        onChangeText={handleTextTitleChange}
+                    />
+                </StyledPostView>
+                
+                <ImagePicker onImageSelection={saveSelectedImage} />
+            </StyledAddArtView>
+        </StyledAddArtSafeAreaView>
     );
 };
 

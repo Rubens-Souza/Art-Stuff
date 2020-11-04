@@ -5,8 +5,16 @@ import {
     DefaultWhiteButton
 } from "../../shared/components/CommunStyles/CommunStyles";
 
-export const StyledAddArtView = styled.SafeAreaView`
+export const StyledAddArtSafeAreaView = styled.SafeAreaView`
+    flex: 1;
 `;
+
+export const StyledAddArtView = styled.ScrollView.attrs({
+    contentContainerStyle: {
+        flexGrow: 1,        
+    }
+})`
+`;  
 
 export const StyledPostView = styled.View`
     width: 100%;

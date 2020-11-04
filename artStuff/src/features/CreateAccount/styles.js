@@ -32,7 +32,7 @@ export const StyledCreateAccountVew = styled.SafeAreaView`
     justify-content: space-evenly;
     align-items: center;
     height: 100%;
-    background-color: ${Colors.SnowWhite + "ac"};
+    background-color: ${Colors.SnowWhite + "af"};
 `;
 
 export const StyledBackgroundImage = styled.ImageBackground`
