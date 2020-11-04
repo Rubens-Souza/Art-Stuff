@@ -1,63 +1,32 @@
 import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { createStackNavigator } from "@react-navigation/stack";
 
-import {
-    StyledTabIcon
-} from "./styles";
+import HomeNavigator, { HomeNavigatorScreenData } from "../HomeNavigator/HomeNavigator";
+import Login, { LoginScreenData } from "../login/login";
 
-import Feed, { FeedTabData } from "../Feed/Feed";
-import Profile, { ProfileTabData } from "../Profile/Profile";
-import AddArt, { AddArtTabData } from "../AddArt/AddArt";
+const Stack = createStackNavigator();
 
-import Colors from "../../shared/utils/constants/Colors";
-
-const Tab = createBottomTabNavigator();
-
-const Tabs = [
-    FeedTabData,
-    ProfileTabData,
-    AddArtTabData,
+const Screens = [
+    LoginScreenData,
+    HomeNavigatorScreenData,
 ];
 
 const Navigator = () => {
 
-    const getScreenOptions = ({ route }) => {
-        const options = {
-            tabBarIcon: ({ focused }) => {
-                return getTabIcon(focused, route.name);
-            },
-        };
-
-        return options;
-    };
-
-    const getTabIcon = (isActive, name) => {
-        const tabData = Tabs.find(tab => tab.name === name);
-        let tabIcon = isActive && tabData ? tabData.enableIcon : tabData.disableIcon;
-
-        return (<StyledTabIcon source={tabIcon} />);
-    };
-
-    const tabBarOptions = {
-        keyboardHidesTabBar: true,
-        showLabel: false,
-        style: {
-          backgroundColor: Colors.White,
-        },
+    const ScreenOptions = {
+        headerShown: false,
     };
 
     return (
         <NavigationContainer>
-            <Tab.Navigator 
-                screenOptions={getScreenOptions}
-                tabBarOptions={tabBarOptions}
-                initialRouteName={FeedTabData.name}>
-                
-                <Tab.Screen name={FeedTabData.name} component={Feed} />
-                <Tab.Screen name={AddArtTabData.name} component={AddArt} />
-                <Tab.Screen name={ProfileTabData.name} component={Profile} />
-            </Tab.Navigator>
+            <Stack.Navigator 
+                screenOptions={ScreenOptions}
+                initialRouteName={Login.name}>
+
+                <Stack.Screen name={LoginScreenData.name} component={Login} />
+                <Stack.Screen name={HomeNavigatorScreenData.name} component={HomeNavigator} />
+            </Stack.Navigator>
         </NavigationContainer>
     );
 };
