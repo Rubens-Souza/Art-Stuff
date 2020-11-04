@@ -6,18 +6,18 @@ import {
     StyledTabIcon
 } from "./styles";
 
-import Feed, { FeedScreenData } from "../Feed/Feed";
-import Profile, { ProfileScreenData } from "../Profile/Profile";
-import AddArt, { AddArtScreenData } from "../AddArt/AddArt";
+import Feed, { FeedTabData } from "../Feed/Feed";
+import Profile, { ProfileTabData } from "../Profile/Profile";
+import AddArt, { AddArtTabData } from "../AddArt/AddArt";
 
 import Colors from "../../shared/utils/constants/Colors";
 
 const Tab = createBottomTabNavigator();
 
-const Screens = [
-    FeedScreenData,
-    ProfileScreenData,
-    AddArtScreenData,
+const Tabs = [
+    FeedTabData,
+    ProfileTabData,
+    AddArtTabData,
 ];
 
 const Navigator = () => {
@@ -25,18 +25,18 @@ const Navigator = () => {
     const getScreenOptions = ({ route }) => {
         const options = {
             tabBarIcon: ({ focused }) => {
-                return getScreenIcon(focused, route.name);
+                return getTabIcon(focused, route.name);
             },
         };
 
         return options;
     };
 
-    const getScreenIcon = (isActive, name) => {
-        const screenData = Screens.find(screen => screen.name === name);
-        let screenIcon = isActive && screenData ? screenData.enableIcon : screenData.disableIcon;
+    const getTabIcon = (isActive, name) => {
+        const tabData = Tabs.find(tab => tab.name === name);
+        let tabIcon = isActive && tabData ? tabData.enableIcon : tabData.disableIcon;
 
-        return (<StyledTabIcon source={screenIcon} />);
+        return (<StyledTabIcon source={tabIcon} />);
     };
 
     const tabBarOptions = {
@@ -52,11 +52,11 @@ const Navigator = () => {
             <Tab.Navigator 
                 screenOptions={getScreenOptions}
                 tabBarOptions={tabBarOptions}
-                initialRouteName={FeedScreenData.name}>
+                initialRouteName={FeedTabData.name}>
                 
-                <Tab.Screen name={FeedScreenData.name} component={Feed} />
-                <Tab.Screen name={AddArtScreenData.name} component={AddArt} />
-                <Tab.Screen name={ProfileScreenData.name} component={Profile} />
+                <Tab.Screen name={FeedTabData.name} component={Feed} />
+                <Tab.Screen name={AddArtTabData.name} component={AddArt} />
+                <Tab.Screen name={ProfileTabData.name} component={Profile} />
             </Tab.Navigator>
         </NavigationContainer>
     );

@@ -15,7 +15,7 @@ import {
 
 import Icons from "../../shared/utils/constants/Icons";
 
-import ScreenData from "../../shared/dtos/ScreenData";
+import TabData from "../../shared/dtos/TabData";
 
 const Profile = () => {
 
@@ -46,5 +46,5 @@ const Profile = () => {
     );
 };
 
-export const ProfileScreenData = new ScreenData(Profile.name, Icons.ProfileFill, Icons.Profile);
+export const ProfileTabData = new TabData(Profile.name, Icons.ProfileFill, Icons.Profile);
 export default Profile;

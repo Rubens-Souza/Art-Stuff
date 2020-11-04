@@ -1,9 +1,9 @@
 class ScreenData {
-    constructor(name, enableIcon, disableIcon) {
+
+    constructor(name){
         this.name = name;
-        this.enableIcon = enableIcon;
-        this.disableIcon = disableIcon;
     }
+    
 }
 
 export default ScreenData;

@@ -16,7 +16,7 @@ import ImagePicker from "../../shared/components/ImagePicker/ImagePicker";
 import Icons from "../../shared/utils/constants/Icons";
 import { EmptyString } from "../../shared/utils/functions/StringUtils";
 
-import ScreenData from "../../shared/dtos/ScreenData";
+import TabData from "../../shared/dtos/TabData";
 
 const AddArt = () => {
 
@@ -52,5 +52,5 @@ const AddArt = () => {
     );
 };
 
-export const AddArtScreenData = new ScreenData("AddArt", Icons.AddArtFill, Icons.AddArt);;
+export const AddArtTabData = new TabData("AddArt", Icons.AddArtFill, Icons.AddArt);;
 export default AddArt;
