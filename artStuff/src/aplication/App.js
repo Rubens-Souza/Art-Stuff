@@ -4,14 +4,14 @@ import {
   StyledSafeAreaView
 }from "./styles";
 
-import Navigator from "../features/Navigator/Navigator";
+import RootNavigator from "../features/RootNavigator/RootNavigator";
 
 const App = () => {
 
   return (
     <React.Fragment>
       <StyledSafeAreaView>
-          <Navigator />
+          <RootNavigator />
       </StyledSafeAreaView>
     </React.Fragment>
   );
