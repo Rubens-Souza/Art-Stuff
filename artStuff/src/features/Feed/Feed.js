@@ -4,7 +4,7 @@ import {
     StyledPostsList
 } from "./styles";
 
-import Post from "../../features/Post/Post";
+import Post from "./Post/Post";
 
 import Icons from "../../shared/utils/constants/Icons";
 
@@ -22,12 +22,12 @@ const Feed = () => {
     const kateFox = new UserData("fake.person.job@gmail.com", "Kate Fox");
     const yuumei = new UserData("fake.person.job@gmail.com", "Yuumei");
     
-    const katePost = new PostData(kateFox, "Flying", KateFoxPostImage, []);
+    const comment = new CommentData(yuumei, "I don't understand, you're saying this is digital??? If so, I'm impressed. Although I don't think I'll ever try it. I do digital work, and like how that comes out. But I also do traditional art, and don't want to mix the two.");
+    let comments = [comment];
+
+    const katePost = new PostData(kateFox, "Flying", KateFoxPostImage, comments);
     const yuPost = new PostData(yuumei, "Flying", YuumeiPostImage, []);
     const yuPost2 = new PostData(kateFox, "Flying", YuumeiPostImage2, []);
-
-    const comment = new CommentData(yuumei, "I don't understand, you're saying this is digital??? If so, I'm impressed. Although I don't think I'll ever try it. I do digital work, and like how that comes out. But I also do traditional art, and don't want to mix the two.");
-    let x = [comment];
 
     const posts = [
         katePost,

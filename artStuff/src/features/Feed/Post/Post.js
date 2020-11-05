@@ -14,14 +14,14 @@ import {
     StyledShareButtonIcon
 } from "./styles";
 
-import Author from "../../shared/components/Author/Author";
-import Comments from "../../shared/components/Comments/Comments";
-import ToggleButtons from "../../shared/components/ToggleButton/ToggleButton";
-import ButtonComments from "../../shared/components/ButtonComments/ButtonComments";
+import Author from "../../../shared/components/Author/Author";
+import Comments from "../Comments/Comments";
+import ToggleButtons from "../../../shared/components/ToggleButton/ToggleButton";
+import ButtonComments from "../../../shared/components/ButtonComments/ButtonComments";
 
-import Icons from "../../shared/utils/constants/Icons";
+import Icons from "../../../shared/utils/constants/Icons";
 
-import PostData from "../../shared/dtos/PostData";
+import PostData from "../../../shared/dtos/PostData";
 
 const Initial_State = {
     areCommentsOpen: true,

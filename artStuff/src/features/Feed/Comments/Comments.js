@@ -10,13 +10,13 @@ import {
     StyledCommentInput
 } from "./styles";
 
-import Comment from "../Comment/Comment";
+import Comment from "../../../shared/components/Comment/Comment";
 
-import Icons from "../../utils/constants/Icons";
-import { EmptyString } from "../../utils/functions/StringUtils";
-import { hasSetFunctionProperty } from "../../utils/functions/ComponentsUtils";
+import Icons from "../../../shared/utils/constants/Icons";
+import { EmptyString } from "../../../shared/utils/functions/StringUtils";
+import { hasSetFunctionProperty } from "../../../shared/utils/functions/ComponentsUtils";
 
-import CommentData from "../../dtos/CommentData";
+import CommentData from "../../../shared/dtos/CommentData";
 
 const Comments = ({
     commentsData,

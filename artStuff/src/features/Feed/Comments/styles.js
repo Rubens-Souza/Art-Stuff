@@ -2,9 +2,7 @@ import styled from "styled-components/native";
 
 import {
     DefaultStyledTextInput
-} from "../CommunStyles/CommunStyles";
-
-import Colors from "../../utils/constants/Colors";
+} from "../../../shared/components/CommunStyles/CommunStyles";
 
 export const StyledCommentsView = styled.View`
 `;
