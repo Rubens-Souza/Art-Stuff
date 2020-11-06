@@ -7,7 +7,7 @@ const INITIAL_STATE = {
 
 const UserReducer = (state = INITIAL_STATE, action) => {
     if (!action) {
-        return;
+        return state;
     }
 
     switch (action.type) {
