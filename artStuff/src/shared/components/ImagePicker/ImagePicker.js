@@ -4,7 +4,7 @@ import { default as NativeImagePicker } from "react-native-image-picker";
 
 import {
     DefaultBlackButton,
-    DefaultBlackButtonText
+    DefaultBlackButtonText,
 } from "../CommunStyles/CommunStyles";
 
 import {
@@ -92,10 +92,16 @@ const ImagePicker = ({
     };
 
     const handleImageSelection = (response) => {
-        setHasSelectedAnImage(true);
         const SelectedImage = getImageData(response);
-
-        setImagePreview(SelectedImage);
+        const ImageSource = {
+            image: {
+                uri: SelectedImage.uri,
+                base64: SelectedImage.base64,
+            },
+        };
+        
+        setImagePreview(ImageSource);
+        setHasSelectedAnImage(true);
 
         if (hasSetFunctionProperty(onImageSelection)) {
             onImageSelection(SelectedImage);
@@ -121,7 +127,7 @@ const ImagePicker = ({
             <If isTrue={showSelectedImage}>
                 <StyledSelectedImageView>
                     <If isTrue={hasSelectedAnImage}>
-                        <StyledSelectedImage source={imagePreview} />
+                        <StyledSelectedImage source={imagePreview.image ? imagePreview.image : EmptyString} />
                     </If>
                     <If isTrue={!hasSelectedAnImage}>
                         <StyledImageNotSelectedPalceholder source={Icons.Artist} />

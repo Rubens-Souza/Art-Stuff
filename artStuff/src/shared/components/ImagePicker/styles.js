@@ -7,8 +7,8 @@ export const StyledImagePickerView = styled.View`
 `;
 
 export const StyledSelectedImage = styled.Image`
-    width: ${(props) => props.width ? props.width : "auto"};
-    height: ${(props) => props.height ? props.height : "auto"};
+    width: 100%;
+    height: 100%;
     resize-mode: contain;
 `;
 
