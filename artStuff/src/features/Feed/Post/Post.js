@@ -4,9 +4,12 @@ import PropTypes from "prop-types";
 import Collapsible from "react-native-collapsible";
 
 import {
+    DefaultStyledHorizontalLine,
+    DefaultStyledHorizontalLineView
+} from "../../../shared/components/CommunStyles/CommunStyles";
+
+import {
     StyledPostView,
-    StyledHorizontalLineView,
-    StyledHorizontalLine,
     StyledPostImage,
     StyledFeedbackView,
     StyledLikeShareView,
@@ -78,9 +81,9 @@ const Post = ({
                 />
             </Collapsible>
 
-            <StyledHorizontalLineView>
-                <StyledHorizontalLine/>
-            </StyledHorizontalLineView>
+            <DefaultStyledHorizontalLineView>
+                <DefaultStyledHorizontalLine/>
+            </DefaultStyledHorizontalLineView>
         </StyledPostView>
     );
 };

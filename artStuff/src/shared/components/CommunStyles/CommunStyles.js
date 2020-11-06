@@ -68,3 +68,14 @@ export const DefaultWhiteButtonText = styled(DefaultButtonText)`
 export const DefaultGhostButtonText = styled(DefaultButtonText)`
     color: ${Colors.Black};
 `;
+
+export const DefaultStyledHorizontalLineView = styled.View`
+    margin-top: 9px;
+    padding: 0 37%;
+`;
+
+export const DefaultStyledHorizontalLine = styled.View`
+    width: 100%;
+    border-bottom-width: 3px;
+    border-bottom-color: ${Colors.Black};
+`;
