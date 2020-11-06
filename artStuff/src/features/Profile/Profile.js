@@ -23,7 +23,6 @@ import Icons from "../../shared/utils/constants/Icons";
 import TabData from "../../shared/dtos/TabData";
 
 const Profile = ({
-    navigation,
     userData,
     onLogout,
 }) => {
@@ -34,7 +33,6 @@ const Profile = ({
     };
 
     const logout = () => {
-        // TODO: Implement logout function
         onLogout();
     };
 
