@@ -1,4 +1,9 @@
 import React, { useState } from "react";
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
+import { compose } from "redux";
+
+import { handleLogin } from "../../redux/User/UserOperations";
 
 import {
     StyledLoginSafeAreaView,
@@ -30,12 +35,13 @@ const BackgroundCovers = [
 ];
 
 const Login = ({
-    navigation
+    navigation,
+    onLogin,
 }) => {
 
     const [emailInputValue, setEmailInputValue] = useState(EmptyString);
     const [passwordInputValue, setPasswordInputValue] = useState(EmptyString);
-
+    const [nickName] = useState("Reizer");
 
     const handleEmailChange = (text) => {
         setEmailInputValue(text);
@@ -46,6 +52,10 @@ const Login = ({
     };
 
     const handleLogin = () => {
+        onLogin({
+            nickName: nickName,
+            email: emailInputValue,
+        });
         navigation.navigate(HomeNavigatorScreenData.name);
     };
 
@@ -109,5 +119,17 @@ const Login = ({
     );
 };
 
+Login.propTypes = {
+    onLogin: PropTypes.func.isRequired,
+};
+
+const mapStateToProps = null;
+
+const mapDispatchToProps = {
+    onLogin: handleLogin,
+};
+
+const connectToRedux = compose(connect(mapStateToProps, mapDispatchToProps));
+
 export const LoginScreenData = new ScreenData(Login.name);
-export default Login;
+export default connectToRedux(Login);
