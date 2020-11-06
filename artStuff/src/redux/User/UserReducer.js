@@ -1,11 +1,8 @@
 import { USER_LOG_IN, USER_LOG_OUT } from "./UserActions";
-import { EmptyString } from "../../shared/utils/functions/StringUtils";
-
-// TODO: Test if you can just pass the UserData class inside the objects literals
+import UserData from "../../shared/dtos/UserData";
 
 const INITIAL_STATE = {
-    nickName: EmptyString,
-    email: EmptyString,
+    userData: UserData.EmptyUser
 };
 
 const UserReducer = (state = INITIAL_STATE, action) => {
@@ -17,16 +14,14 @@ const UserReducer = (state = INITIAL_STATE, action) => {
         case (USER_LOG_IN): {
             return {
                 ...state,
-                nickName: action.payload.nickName,
-                email: action.payload.email,
+                userData: action.payload.user,
             };
         }
 
         case (USER_LOG_OUT): {
             return {
                 ...state,
-                nickName: EmptyString,
-                email: EmptyString,
+                userData: UserData.EmptyUser,
             };
         }
 

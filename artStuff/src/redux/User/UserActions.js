@@ -3,7 +3,9 @@ export const USER_LOG_OUT = "user/logout";
 
 export const login = (user) => ({
     type: USER_LOG_IN,
-    payload: user,
+    payload: {
+        user: user
+    },
 });
 
 export const logout = () => ({

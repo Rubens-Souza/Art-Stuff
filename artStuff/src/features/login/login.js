@@ -26,7 +26,9 @@ import { CreateAccoutScreenData } from "../CreateAccount/CreateAccount";
 
 import Icons from "../../shared/utils/constants/Icons";
 import { EmptyString } from "../../shared/utils/functions/StringUtils";
+
 import ScreenData from "../../shared/dtos/ScreenData";
+import UserData from "../../shared/dtos/UserData";
 
 import CoverPathLessTraveled from "../../../assets/imgs/Author-Yuumei-Path-Less-Traveled.jpg";
 
@@ -52,10 +54,9 @@ const Login = ({
     };
 
     const handleLogin = () => {
-        onLogin({
-            nickName: nickName,
-            email: emailInputValue,
-        });
+        const userData = new UserData(emailInputValue, nickName);
+        onLogin(userData);
+        
         navigation.navigate(HomeNavigatorScreenData.name);
     };
 

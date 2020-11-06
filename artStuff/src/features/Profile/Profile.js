@@ -1,4 +1,9 @@
 import React from "react";
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
+import { compose } from "redux";
+
+import { handleLogout } from "../../redux/User/UserOperations";
 
 import {
     DefaultBlackButton,
@@ -17,24 +22,28 @@ import Icons from "../../shared/utils/constants/Icons";
 
 import TabData from "../../shared/dtos/TabData";
 
-const Profile = () => {
+const Profile = ({
+    navigation,
+    userData,
+    onLogout,
+}) => {
 
-    // TODO: Get user data from Redux
     const userGravatarAcessData = {
-        email: "fake.person.job@gmail.com",
+        email: userData.email,
         secure: true,
     };
 
     const logout = () => {
         // TODO: Implement logout function
+        onLogout();
     };
 
     return (
         <StyledProfileSafeAreaView>
             <StyledUserDataView>
                 <StyledUserImage options={userGravatarAcessData} />
-                <StyledUserName>Fake Person</StyledUserName>
-                <StyledUserEmailText>fake.person.job@gmail.com</StyledUserEmailText>
+                <StyledUserName>{userData.nickName}</StyledUserName>
+                <StyledUserEmailText>{userData.email}</StyledUserEmailText>
             </StyledUserDataView>
 
             <DefaultBlackButton onPress={logout}>
@@ -46,5 +55,22 @@ const Profile = () => {
     );
 };
 
+Profile.propTypes = {
+    onLogout: PropTypes.func.isRequired,
+    userData: PropTypes.object.isRequired,
+};
+
+const mapStateToProps = ({
+    UserReducer
+}) => ({
+    userData: UserReducer.userData,
+});
+
+const mapDispatchToProps = {
+    onLogout: handleLogout,
+};
+
+const connectToRedux = compose(connect(mapStateToProps, mapDispatchToProps));
+
 export const ProfileTabData = new TabData(Profile.name, Icons.ProfileFill, Icons.Profile);
-export default Profile;
+export default connectToRedux(Profile);
