@@ -1,12 +1,12 @@
-import 'react-native-gesture-handler';
 import React from "react";
+import 'react-native-gesture-handler';
 import { Provider } from "react-redux";
-import {AppRegistry} from 'react-native';
+import { AppRegistry } from 'react-native';
 
-import {name as appName} from './app.json';
+import { name as appName } from './app.json';
 
 import App from './src/aplication/App';
-import StoreConfig from "./src/store/config/StoreConfig";
+import StoreConfig from "./src/store/StoreConfig";
 
 const store = StoreConfig();
 
