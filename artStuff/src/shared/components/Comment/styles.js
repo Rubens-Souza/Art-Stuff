@@ -13,6 +13,7 @@ export const StyledCommentView = styled.View`
     padding: 3px 6px;
     border-left-color: ${Colors.LightBlack};
     border-left-width: 2px;
+    margin-bottom: 6px;
 `;
 
 export const StyledCommentAuthorImage = styled(Gravatar)`

@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { compose } from "redux";
 import { connect } from "react-redux";
 
-import { addPostToFeed } from "../Feed/redux/PostOperations";
+import { addPostToFeed } from "../../redux/Post/PostOperations";
 
 import {
     DefaultWhiteButtonText

@@ -1,7 +1,7 @@
 import { combineReducers } from "redux";
 import UserReducer from "../redux/User/UserReducer";
 
-import PostReducer from "../features/Feed/redux/PostReducer";
+import PostReducer from "../redux/Post/PostReducer";
 
 const Reducers = combineReducers({
     UserReducer,

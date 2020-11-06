@@ -1,7 +1,7 @@
 import { CREATE_POST } from "./PostAction";
 
 // TODO: Remove mock posts
-import { posts } from "../../../shared/mocks/PostMocks";
+import { posts } from "../../shared/mocks/PostMocks";
 
 const INITIAL_STATE = {
     feedPosts: posts,
