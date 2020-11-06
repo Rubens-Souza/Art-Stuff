@@ -1,9 +1,9 @@
 import { login, logout } from "./UserActions";
 
-export const handleLogin = (user) => (dispatch) => {
+export const loginUser = (user) => (dispatch) => {
     return dispatch(login(user));
 };
 
-export const handleLogout = () => (dispatch) => {
+export const logoutActiveUser = () => (dispatch) => {
     return dispatch(logout());
 };

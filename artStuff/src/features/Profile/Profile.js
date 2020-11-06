@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { compose } from "redux";
 
-import { handleLogout } from "../../redux/User/UserOperations";
+import { logoutActiveUser } from "../../redux/User/UserOperations";
 
 import {
     DefaultBlackButton,
@@ -32,7 +32,7 @@ const Profile = ({
         secure: true,
     };
 
-    const logout = () => {
+    const handleLogout = () => {
         onLogout();
     };
 
@@ -44,7 +44,7 @@ const Profile = ({
                 <StyledUserEmailText>{userData.email}</StyledUserEmailText>
             </StyledUserDataView>
 
-            <DefaultBlackButton onPress={logout}>
+            <DefaultBlackButton onPress={handleLogout}>
                 <DefaultBlackButtonText>
                     Logout
                 </DefaultBlackButtonText>
@@ -65,7 +65,7 @@ const mapStateToProps = ({
 });
 
 const mapDispatchToProps = {
-    onLogout: handleLogout,
+    onLogout: logoutActiveUser,
 };
 
 const connectToRedux = compose(connect(mapStateToProps, mapDispatchToProps));

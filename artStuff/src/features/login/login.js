@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { compose } from "redux";
 
-import { handleLogin } from "../../redux/User/UserOperations";
+import { loginUser } from "../../redux/User/UserOperations";
 
 import {
     StyledLoginSafeAreaView,
@@ -127,7 +127,7 @@ Login.propTypes = {
 const mapStateToProps = null;
 
 const mapDispatchToProps = {
-    onLogin: handleLogin,
+    onLogin: loginUser,
 };
 
 const connectToRedux = compose(connect(mapStateToProps, mapDispatchToProps));
