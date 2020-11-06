@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
+import { connect } from "react-redux";
+import { compose } from "redux";
 
 import {
     StyledCommentsView,
@@ -19,6 +21,7 @@ import { hasSetFunctionProperty } from "../../../shared/utils/functions/Componen
 import CommentData from "../../../shared/dtos/CommentData";
 
 const Comments = ({
+    activeUser,
     commentsData,
     onNewCommentInsert,
 }) => {
@@ -31,13 +34,12 @@ const Comments = ({
 
     const handleNewCommentInsert = () => {
         let newCommentContent = newComment;
+        let newCommentData = new CommentData(activeUser, newCommentContent);
+        
         setNewComment(EmptyString);
 
-        // TODO: Add comment with user without getting the active user from props
-        // let newCommentData = new CommentData(activeUser, newCommentContent);
-
         if (hasSetFunctionProperty(onNewCommentInsert)) {
-            onNewCommentInsert();
+            onNewCommentInsert(newCommentData);
         }
     };
 
@@ -70,6 +72,7 @@ const Comments = ({
 };
 
 Comments.propTypes = {
+    activeUser: PropTypes.object.isRequired,
     commentsData: PropTypes.array.isRequired,
     onNewCommentInsert: PropTypes.func,
 };
@@ -79,4 +82,14 @@ Comments.defautProps = {
     onNewCommentInsert: null,
 };
 
-export default Comments;
+const mapStateToProps = ({
+    UserReducer,
+}) => ({
+    activeUser: UserReducer.userData,
+});
+
+const mapDispatchToProps = null;
+
+const connectToRedux = compose(connect(mapStateToProps, mapDispatchToProps));
+
+export default connectToRedux(Comments);

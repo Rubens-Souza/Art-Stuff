@@ -42,6 +42,13 @@ const Post = ({
         setAreCommentsOpen(false);
     };
 
+    const handleNewCommentInsert = (newComment) => {
+        const updatedPostComments = [...comments];
+        updatedPostComments.push(newComment);
+
+        setComments(updatedPostComments);
+    };
+
     return (
         <StyledPostView>
             <Author user={postData.author}>
@@ -65,7 +72,10 @@ const Post = ({
             </StyledFeedbackView>
 
             <Collapsible collapsed={areCommentsOpen}>
-                <Comments commentsData={comments}/>
+                <Comments 
+                    commentsData={comments}
+                    onNewCommentInsert={handleNewCommentInsert}
+                />
             </Collapsible>
 
             <StyledHorizontalLineView>
