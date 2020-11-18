@@ -54,7 +54,7 @@ const AddArt = ({
 
         setArtTitle(INITIAL_STATE.artTitle);
         setImage(INITIAL_STATE.image);
-        
+
         const postData = new PostData(activeUser, artTitle, image, new Array(0));
         // TODO: Save image data in firebase
         onAddPost(postData);
@@ -77,7 +77,10 @@ const AddArt = ({
                     />
                 </StyledPostView>
                 
-                <ImagePicker onImageSelection={saveSelectedImage} />
+                <ImagePicker
+                    onImageSelection={saveSelectedImage}
+                    value={image !== ImageData.EmptyImageData ? image.getImageSource() : null}
+                />
             </StyledAddArtView>
         </StyledAddArtSafeAreaView>
     );
@@ -100,5 +103,5 @@ const mapDispatchToProps = {
 
 const connectToRedux = compose(connect(mapStateToProps, mapDispatchToProps));
 
-export const AddArtTabData = new TabData(AddArt.name, Icons.AddArtFill, Icons.AddArt);;
+export const AddArtTabData = new TabData(AddArt.name, Icons.AddArtFill, Icons.AddArt);
 export default connectToRedux(AddArt);

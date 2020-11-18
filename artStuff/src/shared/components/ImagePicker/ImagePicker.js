@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 import { default as NativeImagePicker } from "react-native-image-picker";
 
@@ -41,11 +41,8 @@ const ImagePicker = ({
     onImageSelection,
     showSelectedImage,
     displayText,
+    value,
 }) => {
-
-    const [imagePreview, setImagePreview] = useState(EmptyString);
-    const [hasSelectedAnImage, setHasSelectedAnImage] = useState(false);
-
     const options = {
         mediaType: MidaTypes.photo,
         quality: 1,
@@ -53,7 +50,6 @@ const ImagePicker = ({
     };
 
     const handleUserAction = (response) => {
-
         if (!isStringBlank(response.erroCode)) {
             handleErro(response.erroCode);
         }
@@ -67,9 +63,7 @@ const ImagePicker = ({
     };
 
     const handleErro = (erroCode) => {
-
         switch (erroCode) {
-
             case ErroCodes.permission:
                 if (hasSetFunctionProperty(onPermissionError)) {
                     onPermissionError();
@@ -85,7 +79,6 @@ const ImagePicker = ({
     };
 
     const handleCancel = () => {
-
         if (hasSetFunctionProperty(onCancel)) {
             onCancel();
         }
@@ -93,15 +86,6 @@ const ImagePicker = ({
 
     const handleImageSelection = (response) => {
         const SelectedImage = getImageData(response);
-        const ImageSource = {
-            image: {
-                uri: SelectedImage.uri,
-                base64: SelectedImage.base64,
-            },
-        };
-        
-        setImagePreview(ImageSource);
-        setHasSelectedAnImage(true);
 
         if (hasSetFunctionProperty(onImageSelection)) {
             onImageSelection(SelectedImage);
@@ -118,24 +102,28 @@ const ImagePicker = ({
         return new ImageData(uri, imageBase64, height, width, formatType);
     };
 
-    const SelectImage = () => {
+    const selectImage = () => {
         NativeImagePicker.launchImageLibrary(options, handleUserAction);
+    };
+
+    const hasAnImageValue = () => {
+        return (!!value && !!value.image);
     };
 
     return (
         <StyledImagePickerView>
             <If isTrue={showSelectedImage}>
                 <StyledSelectedImageView>
-                    <If isTrue={hasSelectedAnImage}>
-                        <StyledSelectedImage source={imagePreview.image ? imagePreview.image : EmptyString} />
+                    <If isTrue={hasAnImageValue()}>
+                        <StyledSelectedImage source={hasAnImageValue() ? value.image : EmptyString} />
                     </If>
-                    <If isTrue={!hasSelectedAnImage}>
+                    <If isTrue={!hasAnImageValue()}>
                         <StyledImageNotSelectedPalceholder source={Icons.Artist} />
                     </If>
                 </StyledSelectedImageView>
             </If>
 
-            <DefaultBlackButton onPress={SelectImage}>
+            <DefaultBlackButton onPress={selectImage}>
                 <DefaultBlackButtonText>
                     {displayText}
                 </DefaultBlackButtonText>
@@ -151,6 +139,7 @@ ImagePicker.propTypes = {
     onImageSelection: PropTypes.func,
     showSelectedImage: PropTypes.bool,
     displayText: PropTypes.string,
+    value: PropTypes.instanceOf(Object),
 };
 
 ImagePicker.defaultProps = {
@@ -160,6 +149,7 @@ ImagePicker.defaultProps = {
     onImageSelection: null,
     showSelectedImage: true,
     displayText: "Choose an image!",
+    value: null,
 };
 
 export default ImagePicker;
