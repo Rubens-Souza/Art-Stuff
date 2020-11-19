@@ -40,7 +40,6 @@ const Post = ({
 }) => {
 
     const [areCommentsOpen, setAreCommentsOpen] = useState(Initial_State.areCommentsOpen);
-    const [comments, setComments] = useState(postData.comments);
 
     const handleOpenComments = () => {
         setAreCommentsOpen(true);
@@ -52,7 +51,6 @@ const Post = ({
 
     const handleNewCommentInsert = (newComment) => {
         onInsertComment(postData.id, newComment);
-        setComments(postData.comments);
     };
 
     return (
@@ -67,7 +65,7 @@ const Post = ({
                 <ButtonComments 
                     onEnable={handleOpenComments}
                     onDisable={handleCloseComments}
-                    numberComments={comments.length}/>
+                    numberComments={postData.comments.length}/>
                 
                 <StyledLikeShareView>
                     <ToggleButtons enableIcon={Icons.Liked} disableIcon={Icons.Like}/>
@@ -79,7 +77,7 @@ const Post = ({
 
             <Collapsible collapsed={areCommentsOpen}>
                 <Comments 
-                    commentsData={comments}
+                    commentsData={postData.comments}
                     onNewCommentInsert={handleNewCommentInsert}
                 />
             </Collapsible>
