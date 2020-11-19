@@ -1,7 +1,11 @@
 import React, { useState } from "react";
+import { compose } from "redux";
+import { connect } from "react-redux";
 import PropTypes from "prop-types";
 
 import Collapsible from "react-native-collapsible";
+
+import { addCommentToPost } from "../../../redux/Post/PostOperations";
 
 import {
     DefaultStyledHorizontalLine,
@@ -31,7 +35,8 @@ const Initial_State = {
 }
 
 const Post = ({
-    postData
+    postData,
+    onInsertComment,
 }) => {
 
     const [areCommentsOpen, setAreCommentsOpen] = useState(Initial_State.areCommentsOpen);
@@ -46,10 +51,8 @@ const Post = ({
     };
 
     const handleNewCommentInsert = (newComment) => {
-        const updatedPostComments = [...comments];
-        updatedPostComments.push(newComment);
-
-        setComments(updatedPostComments);
+        onInsertComment(postData.id, newComment);
+        setComments(postData.comments);
     };
 
     return (
@@ -89,11 +92,20 @@ const Post = ({
 };
 
 Post.propTypes = {
-    postData: PropTypes.object.isRequired,
+    postData: PropTypes.instanceOf(PostData).isRequired,
+    onInsertComment: PropTypes.func.isRequired,
 };
 
 Post.defaultProps = {
     postData: PostData.EmptyPost,
+    onInsertComment: null,
 };
 
-export default Post;
+const mapStateToProps = null;
+
+const mapDispatchToProps = {
+    onInsertComment: addCommentToPost,
+};
+
+const connectToRedux = compose(connect(mapStateToProps, mapDispatchToProps));
+export default connectToRedux(Post);

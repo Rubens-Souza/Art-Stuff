@@ -1,4 +1,5 @@
 import UserData from "./UserData";
+import { EmptyString } from "../utils/functions/StringUtils";
 
 class CommentData {
 
@@ -8,7 +9,7 @@ class CommentData {
         this.comment = comment;
     }
 
-    static EmptyCommentData = new CommentData(UserData.EmptyUser, new Array(0));
+    static EmptyCommentData = new CommentData(UserData.EmptyUser, EmptyString);
 }
 
 export default CommentData;
