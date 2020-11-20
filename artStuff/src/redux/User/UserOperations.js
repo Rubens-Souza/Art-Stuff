@@ -9,15 +9,14 @@ import {
     isPasswordValid,
 } from "../../shared/utils/functions/UserValidations";
 
-import {
-    isPasswordCorrect,
-} from "./UserService";
+import UserService from "./UserService";
 
 export const loginUser = (userData, password) => (dispatch) => { // TODO: Make async
-    if (!isEmailValid(userData.email) || !isPasswordValid(password) || !isPasswordCorrect(password)) {
+    if (!isEmailValid(userData.email) || !isPasswordValid(password) || !UserService.isPasswordCorrect(password)) {
         return;   // TODO: Throw error
     }
-
+    
+    userData.nickName = UserService.getUserNickName(userData.email);
     return dispatch(login(userData));
 };
 
@@ -25,16 +24,11 @@ export const logoutActiveUser = () => (dispatch) => {
     return dispatch(logout());
 };
 
-const registerLoginData = (userData, userPassword) => {
-    // TODO: Save login data in Firebase
-};
-
 export const registerUser = (userData, userPassword) => (dispatch) => { // TODO: Make async
     if (!isEmailValid(userData.email) || !isNickNameValid(userData.nickName) || !isPasswordValid(userPassword)) {
         return; // TODO: Throw error
     }
 
-    registerLoginData(userData, userPassword);
-
+    UserService.registerUserData(userData, userPassword);
     return dispatch(login(userData));
 };

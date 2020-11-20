@@ -43,7 +43,6 @@ const Login = ({
 
     const [emailInputValue, setEmailInputValue] = useState(EmptyString);
     const [passwordInputValue, setPasswordInputValue] = useState(EmptyString);
-    const [nickName] = useState("Reizer");
 
     const handleEmailChange = (text) => {
         setEmailInputValue(text);
@@ -54,7 +53,7 @@ const Login = ({
     };
 
     const handleLogin = () => {
-        const userData = new UserData(emailInputValue, nickName);
+        const userData = new UserData(emailInputValue, EmptyString);
         onLogin(userData, passwordInputValue);
         
         navigation.navigate(HomeNavigatorScreenData.name);
