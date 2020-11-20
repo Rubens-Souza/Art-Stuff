@@ -1,4 +1,8 @@
-import { USER_LOG_IN, USER_LOG_OUT } from "./UserActions";
+import { 
+    USER_LOG_IN,
+    USER_LOG_OUT,
+} from "./UserActions";
+
 import UserData from "../../shared/dtos/UserData";
 
 const INITIAL_STATE = {
