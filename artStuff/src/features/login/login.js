@@ -55,7 +55,7 @@ const Login = ({
 
     const handleLogin = () => {
         const userData = new UserData(emailInputValue, nickName);
-        onLogin(userData);
+        onLogin(userData, passwordInputValue);
         
         navigation.navigate(HomeNavigatorScreenData.name);
     };

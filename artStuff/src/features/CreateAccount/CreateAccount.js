@@ -1,4 +1,9 @@
 import React, { useState } from "react";
+import PropTypes from "prop-types";
+import { compose } from "redux";
+import { connect } from "react-redux";
+
+import { registerUser } from "../../redux/User/UserOperations";
 
 import {
     StyledBackgroundImage,
@@ -17,9 +22,12 @@ import {
 } from "./styles";
 
 import { LoginScreenData } from "../Login/Login";
+import { HomeNavigatorScreenData } from "../Navigators/HomeNavigator/HomeNavigator";
 
 import Icons from "../../shared/utils/constants/Icons";
 import { EmptyString } from "../../shared/utils/functions/StringUtils";
+
+import UserData from "../../shared/dtos/UserData";
 import ScreenData from "../../shared/dtos/ScreenData";
 
 import CoverPathLessTraveled from "../../../assets/imgs/Author-Yuumei-Path-Less-Traveled.jpg";
@@ -29,7 +37,8 @@ const BackgroundCovers = [
 ];
 
 const CreateAccount = ({
-    navigation
+    navigation,
+    onRegister,
 }) => {
 
     const [userNameInputValue, setUserInputName] = useState(EmptyString);
@@ -49,7 +58,11 @@ const CreateAccount = ({
     };
 
     const handleRegister = () => {
+        const userData = new UserData(emailInputValue, userNameInputValue);
 
+        onRegister(userData, passwordInputVale);
+
+        navigation.navigate(HomeNavigatorScreenData.name);
     };
 
     const handleCancel = () => {
@@ -127,5 +140,21 @@ const CreateAccount = ({
     );
 };
 
+CreateAccount.propTypes = {
+    onRegister: PropTypes.func.isRequired,
+};
+
+CreateAccount.defaultProps = {
+    onRegister: null,
+};
+
+const mapStateToProps = null;
+
+const mapDispatchToProps = {
+    onRegister: registerUser,
+};
+
+const connectToRedux = compose(connect(mapStateToProps, mapDispatchToProps));
+
 export const CreateAccoutScreenData = new ScreenData(CreateAccount.name);
-export default CreateAccount;
+export default connectToRedux(CreateAccount);
