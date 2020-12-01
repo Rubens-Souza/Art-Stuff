@@ -1,7 +1,5 @@
 import React, { useState } from "react";
-import PropTypes from "prop-types";
-import { connect } from "react-redux";
-import { compose } from "redux";
+import { useDispatch } from "react-redux";
 
 import { loginUser } from "../../redux/User/UserOperations";
 
@@ -38,11 +36,11 @@ const BackgroundCovers = [
 
 const Login = ({
     navigation,
-    onLogin,
 }) => {
-
     const [emailInputValue, setEmailInputValue] = useState(EmptyString);
     const [passwordInputValue, setPasswordInputValue] = useState(EmptyString);
+
+    const dispatch = useDispatch();
 
     const handleEmailChange = (text) => {
         setEmailInputValue(text);
@@ -54,7 +52,7 @@ const Login = ({
 
     const handleLogin = () => {
         const userData = new UserData(emailInputValue, EmptyString);
-        onLogin(userData, passwordInputValue);
+        dispatch(loginUser(userData, passwordInputValue));
         
         navigation.navigate(HomeNavigatorScreenData.name);
     };
@@ -119,17 +117,5 @@ const Login = ({
     );
 };
 
-Login.propTypes = {
-    onLogin: PropTypes.func.isRequired,
-};
-
-const mapStateToProps = null;
-
-const mapDispatchToProps = {
-    onLogin: loginUser,
-};
-
-const connectToRedux = compose(connect(mapStateToProps, mapDispatchToProps));
-
 export const LoginScreenData = new ScreenData(Login.name);
-export default connectToRedux(Login);
+export default Login;

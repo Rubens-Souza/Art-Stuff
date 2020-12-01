@@ -1,7 +1,5 @@
 import React from "react";
-import PropTypes from "prop-types";
-import { connect } from "react-redux";
-import { compose } from "redux";
+import { useSelector } from "react-redux";
 
 import {
     StyledPostsList
@@ -13,9 +11,9 @@ import Icons from "../../shared/utils/constants/Icons";
 
 import TabData from "../../shared/dtos/TabData";
 
-const Feed = ({
-    posts,
-}) => {
+const Feed = () => {
+    const posts = useSelector((state) => state.PostReducer.feedPosts);
+
     return (
         <StyledPostsList
             data={posts}
@@ -27,19 +25,5 @@ const Feed = ({
     );
 };
 
-Feed.propTypes = {
-    posts: PropTypes.array.isRequired,
-};
-
-const mapStateToProps = ({
-    PostReducer,
-}) => ({
-    posts: PostReducer.feedPosts,
-});
-
-const mapDispatchToProps = null;
-
-const connectToRedux = compose(connect(mapStateToProps, mapDispatchToProps));
-
 export const FeedTabData = new TabData(Feed.name, Icons.FeedEnable, Icons.FeedDisable);
-export default connectToRedux(Feed);
+export default Feed;

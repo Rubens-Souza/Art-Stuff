@@ -1,7 +1,5 @@
 import React, { useState } from "react";
-import PropTypes from "prop-types";
-import { compose } from "redux";
-import { connect } from "react-redux";
+import { useDispatch } from "react-redux";
 
 import { registerUser } from "../../redux/User/UserOperations";
 
@@ -38,12 +36,12 @@ const BackgroundCovers = [
 
 const CreateAccount = ({
     navigation,
-    onRegister,
 }) => {
-
     const [userNameInputValue, setUserInputName] = useState(EmptyString);
     const [emailInputValue, setEmailInputValue] = useState(EmptyString);
     const [passwordInputVale, setPasswordInputValue] = useState(EmptyString);
+
+    const dispatch = useDispatch();
 
     const handelUserNameChange = (text) => {
         setUserInputName(text);
@@ -60,7 +58,7 @@ const CreateAccount = ({
     const handleRegister = () => {
         const userData = new UserData(emailInputValue, userNameInputValue);
 
-        onRegister(userData, passwordInputVale);
+        dispatch(registerUser(userData, passwordInputVale));
 
         navigation.navigate(HomeNavigatorScreenData.name);
     };
@@ -72,7 +70,6 @@ const CreateAccount = ({
     return (
         <StyledBackgroundImage source={BackgroundCovers[0]}>
             <StyledCreateAccountVew>
-
                 <StyledTitleView>
                     <StyledAppLogo source={Icons.FavIcon} />
 
@@ -82,7 +79,6 @@ const CreateAccount = ({
                 </StyledTitleView>
 
                 <StyledTextInputView>
-
                     <StyledTextInputLabel>
                         User Name
                     </StyledTextInputLabel>
@@ -94,7 +90,6 @@ const CreateAccount = ({
                 </StyledTextInputView>
 
                 <StyledTextInputView>
-                
                     <StyledTextInputLabel>
                         Email
                     </StyledTextInputLabel>
@@ -107,7 +102,6 @@ const CreateAccount = ({
                 </StyledTextInputView>
 
                 <StyledTextInputView>
-                
                     <StyledTextInputLabel>
                         Password
                     </StyledTextInputLabel>
@@ -121,7 +115,6 @@ const CreateAccount = ({
                 </StyledTextInputView>
 
                 <StyledButtonsView>
-                    
                     <StyledBlackButton>
                         <StyledBlackButtonText onPress={handleRegister}>
                             Register
@@ -134,27 +127,10 @@ const CreateAccount = ({
                         </StyledGhostBlackButtonText>
                     </StyledGhostBlackButton>
                 </StyledButtonsView>
-
             </StyledCreateAccountVew>
         </StyledBackgroundImage>
     );
 };
 
-CreateAccount.propTypes = {
-    onRegister: PropTypes.func.isRequired,
-};
-
-CreateAccount.defaultProps = {
-    onRegister: null,
-};
-
-const mapStateToProps = null;
-
-const mapDispatchToProps = {
-    onRegister: registerUser,
-};
-
-const connectToRedux = compose(connect(mapStateToProps, mapDispatchToProps));
-
 export const CreateAccoutScreenData = new ScreenData(CreateAccount.name);
-export default connectToRedux(CreateAccount);
+export default CreateAccount;

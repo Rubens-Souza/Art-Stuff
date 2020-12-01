@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import { compose } from "redux";
-import { connect } from "react-redux";
+import { useDispatch } from "react-redux";
 import PropTypes from "prop-types";
 
 import Collapsible from "react-native-collapsible";
@@ -36,10 +35,9 @@ const Initial_State = {
 
 const Post = ({
     postData,
-    onInsertComment,
 }) => {
-
     const [areCommentsOpen, setAreCommentsOpen] = useState(Initial_State.areCommentsOpen);
+    const dispatch = useDispatch();
 
     const handleOpenComments = () => {
         setAreCommentsOpen(true);
@@ -50,7 +48,7 @@ const Post = ({
     };
 
     const handleNewCommentInsert = (newComment) => {
-        onInsertComment(postData.id, newComment);
+        dispatch(addCommentToPost(postData.id, newComment));
     };
 
     return (
@@ -91,19 +89,10 @@ const Post = ({
 
 Post.propTypes = {
     postData: PropTypes.instanceOf(PostData).isRequired,
-    onInsertComment: PropTypes.func.isRequired,
 };
 
 Post.defaultProps = {
     postData: PostData.EmptyPost,
-    onInsertComment: null,
 };
 
-const mapStateToProps = null;
-
-const mapDispatchToProps = {
-    onInsertComment: addCommentToPost,
-};
-
-const connectToRedux = compose(connect(mapStateToProps, mapDispatchToProps));
-export default connectToRedux(Post);
+export default Post;

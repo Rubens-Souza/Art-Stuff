@@ -1,7 +1,5 @@
 import React from "react";
-import PropTypes from "prop-types";
-import { connect } from "react-redux";
-import { compose } from "redux";
+import { useDispatch, useSelector } from "react-redux";
 
 import { logoutActiveUser } from "../../redux/User/UserOperations";
 
@@ -22,10 +20,9 @@ import Icons from "../../shared/utils/constants/Icons";
 
 import TabData from "../../shared/dtos/TabData";
 
-const Profile = ({
-    userData,
-    onLogout,
-}) => {
+const Profile = () => {
+    const userData = useSelector((state) => state.UserReducer.userData);
+    const dispatch = useDispatch();
 
     const userGravatarAcessData = {
         email: userData.email,
@@ -33,7 +30,7 @@ const Profile = ({
     };
 
     const handleLogout = () => {
-        onLogout();
+        dispatch(logoutActiveUser());
     };
 
     return (
@@ -53,22 +50,5 @@ const Profile = ({
     );
 };
 
-Profile.propTypes = {
-    onLogout: PropTypes.func.isRequired,
-    userData: PropTypes.object.isRequired,
-};
-
-const mapStateToProps = ({
-    UserReducer
-}) => ({
-    userData: UserReducer.userData,
-});
-
-const mapDispatchToProps = {
-    onLogout: logoutActiveUser,
-};
-
-const connectToRedux = compose(connect(mapStateToProps, mapDispatchToProps));
-
 export const ProfileTabData = new TabData(Profile.name, Icons.ProfileFill, Icons.Profile);
-export default connectToRedux(Profile);
+export default Profile;

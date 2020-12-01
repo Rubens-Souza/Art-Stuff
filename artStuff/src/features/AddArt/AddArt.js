@@ -1,7 +1,5 @@
 import React, { useState } from "react";
-import PropTypes from "prop-types";
-import { compose } from "redux";
-import { connect } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 
 import { addPostToFeed } from "../../redux/Post/PostOperations";
 
@@ -31,13 +29,13 @@ const INITIAL_STATE = {
     image: ImageData.EmptyImageData,
 };
 
-const AddArt = ({
-    onAddPost,
-    activeUser,
-}) => {
-
+const AddArt = () => {
     const [artTitle, setArtTitle] = useState(INITIAL_STATE.artTitle);
     const [image, setImage] = useState(INITIAL_STATE.image);
+
+    const activeUser = useSelector((state) => state.UserReducer.userData);
+
+    const dispatch = useDispatch();
 
     const handleTextTitleChange = (text) => {
         setArtTitle(text);
@@ -57,7 +55,7 @@ const AddArt = ({
 
         const postData = new PostData(activeUser, artTitle, image, new Array(0));
         // TODO: Save image data in firebase
-        onAddPost(postData);
+        dispatch(addPostToFeed(postData));
     };
 
     return (
@@ -86,22 +84,5 @@ const AddArt = ({
     );
 };
 
-AddArt.propTypes = {
-    onAddPost: PropTypes.func.isRequired,
-    activeUser: PropTypes.object.isRequired,
-};
-
-const mapStateToProps = ({
-    UserReducer
-}) => ({
-    activeUser: UserReducer.userData,
-});
-
-const mapDispatchToProps = {
-    onAddPost: addPostToFeed,
-};
-
-const connectToRedux = compose(connect(mapStateToProps, mapDispatchToProps));
-
 export const AddArtTabData = new TabData(AddArt.name, Icons.AddArtFill, Icons.AddArt);
-export default connectToRedux(AddArt);
+export default AddArt;

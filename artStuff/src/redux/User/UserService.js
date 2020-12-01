@@ -1,6 +1,7 @@
 class UserService {
     static isPasswordCorrect(email, password) {
         // TODO: Call firebase to verify the password
+        return true;
     }
 
     static getUserNickName(email) {
