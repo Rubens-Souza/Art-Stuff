@@ -3,12 +3,15 @@ import { createPost, addComment } from "./PostAction";
 import PostData from "../../shared/dtos/PostData";
 import CommmentData from "../../shared/dtos/CommentData";
 
+import PostService from "./PostService";
+
 export const addPostToFeed = (post) => (dispatch) => {
     if (post === PostData.EmptyPost) {
         return;
     }
 
-    return dispatch(createPost(post));
+    PostService.savePost(post)
+        .then(() => dispatch(createPost(post)));
 };
 
 export const addCommentToPost = (postId, commentData) => (dispatch) => {
